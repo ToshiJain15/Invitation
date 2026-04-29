@@ -678,9 +678,8 @@ h3 {
     font-family: 'Cinzel Decorative', serif;
     font-size: 3.5rem;
     float: left;
-    margin-right: 0px;
+    margin-right: -15px;
     margin-top: 5px;
-    padding-right: 5px;
     line-height: 0.8;
     color: var(--primary-color);
     text-shadow: 1px 1px 2px rgba(212, 175, 55, 0.5);
@@ -829,7 +828,7 @@ h3 {
 }
 
 .venue-info {
-    background: rgba(20, 5, 5, 0.7);
+    background: rgba(10, 5, 5, 0.85);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     padding: 40px;
@@ -841,19 +840,21 @@ h3 {
 }
 
 .venue-info h3 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 20px;
-    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    background: linear-gradient(to right, #FFE5B4, #FFD700, #FFDF00, #FFF8DC);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+    font-weight: 700;
 }
 
 .venue-info p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 30px;
     color: #ffffff;
+    font-weight: 600;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
 }
 
@@ -1010,9 +1011,8 @@ h3 {
 
     .drop-cap {
         font-size: 2.8rem;
-        margin-right: 2px;
+        margin-right: -10px;
         margin-top: 3px;
-        padding-right: 2px;
     }
 
     .parents-block {
