@@ -450,10 +450,25 @@ h3 {
 }
 
 .ganesha-img {
-    width: 120px;
+    width: 80px;
     margin-bottom: 15px;
     filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
     animation: floating 3s ease-in-out infinite;
+}
+
+.shree-ganesh {
+    color: var(--text-gold);
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.wedding-date-hero {
+    letter-spacing: 8px;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-top: -10px;
 }
 
 @keyframes floating {
@@ -636,12 +651,13 @@ h3 {
 }
 
 .couple-img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid var(--secondary-color);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    width: 80%;
+    max-width: 400px;
+    height: auto;
+    border: 2px solid #cdb071;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 20px 0;
 }
 
 .romantic-quote {
@@ -909,25 +925,100 @@ h3 {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    .physical-card-wrapper {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        border: none;
+    }
+
+    .physical-card-wrapper::before {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .hero {
+        padding: 150px 20px;
+    }
+
+    .hero-content {
+        padding: 40px 20px;
+        width: 95%;
+    }
+
     .main-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
+    }
+
+    .sub-title {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    .wedding-date-hero {
+        font-size: 1.1rem;
+        letter-spacing: 5px;
+    }
+
+    .wax-seal {
+        width: 100px;
+        height: 100px;
+    }
+
+    .seal-text {
+        font-size: 2rem;
     }
 
     .nav-links {
         display: none;
     }
 
-    .couple-names {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     .timer-grid {
         grid-template-columns: repeat(2, 1fr);
+        max-width: 90%;
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .romantic-quote {
+        font-size: 1.2rem;
+        line-height: 1.8;
+    }
+
+    .romantic-quote::first-letter {
+        font-size: 2.8rem;
+    }
+
+    .parents-block {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .vertical-divider {
+        display: none;
+    }
+
+    .event-card.featured {
+        transform: scale(1);
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.8rem;
+    }
+
+    .hero {
+        padding: 100px 15px;
+    }
+
+    .hero-content {
+        padding: 30px 15px;
     }
 }
 
