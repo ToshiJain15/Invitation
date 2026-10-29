@@ -795,15 +795,17 @@ h4 {
    ========================================================================== */
 
 .hero {
-    min-height: 680px;
+    min-height: auto;
     aspect-ratio: 1 / 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 100px 35px 90px 35px;
+    padding: 20% 0 25% 0;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .jain-theme-bg {
@@ -818,11 +820,18 @@ h4 {
     z-index: 2;
     background: transparent;
     backdrop-filter: none;
-    padding: 15px 20px 0 20px;
+    padding: 0;
     border: none;
     box-shadow: none;
+    width: 45%;
     max-width: 45%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .hero-content::after {
@@ -840,69 +849,73 @@ h4 {
 }
 
 .ganesha-top {
-    margin-bottom: 8px;
+    margin: 0 0 2px 0;
+    line-height: 1;
 }
 
 .ganesha-img {
-    width: 72px;
+    width: clamp(28px, 5.5vw, 40px);
     height: auto;
-    filter: drop-shadow(0 2px 8px rgba(160, 100, 20, 0.45));
-    animation: floatingGanesha 3.5s ease-in-out infinite;
-}
-
-@keyframes floatingGanesha {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-6px);
-        filter: drop-shadow(0 4px 12px rgba(160, 100, 20, 0.65));
-    }
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(92, 9, 17, 0.35);
+    filter: drop-shadow(0 2px 6px rgba(160, 100, 20, 0.45));
 }
 
 .shree-ganesh {
     color: #5c0911;
-    font-size: 0.95rem;
-    letter-spacing: 3px;
-    margin-bottom: 8px;
+    font-size: 0.62rem;
+    letter-spacing: 1px;
+    white-space: nowrap !important;
+    margin: 0 auto 2px auto;
     font-weight: 800;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 8px rgba(255, 245, 220, 0.9);
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 5px rgba(255, 245, 220, 0.9);
     font-family: 'Cinzel', serif;
+    line-height: 1.15;
 }
 
 .sub-title {
-    font-size: 0.88rem;
-    letter-spacing: 1.5px;
-    text-transform: capitalize;
-    margin-bottom: 10px;
-    color: #2b1810;
-    font-weight: 600;
-    line-height: 1.5;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 6px rgba(255, 255, 255, 0.9);
+    font-size: clamp(0.42rem, 1.2vw, 0.55rem);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin: 0 auto 2px auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    color: #3a141a;
+    font-weight: 700;
+    line-height: 1.22;
+    width: 100%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
+    font-family: 'Cinzel', serif;
 }
 
 .main-title {
     font-family: 'Cinzel Decorative', 'Cinzel', serif;
-    font-size: clamp(2.2rem, 5.5vw, 3.4rem);
-    line-height: 1.15;
-    margin: 6px 0 10px 0;
-    letter-spacing: 2px;
-    background: #5c0911;
-    background-size: 250% auto;
+    font-size: clamp(0.98rem, 3.2vw, 1.45rem);
+    line-height: 1.02;
+    margin: 0 auto;
+    letter-spacing: 1.2px;
+    white-space: nowrap !important;
+    background: linear-gradient(135deg, #5c0911 0%, #7d121c 50%, #5c0911 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: goldShineSweep 5s linear infinite;
-    filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 2px #fff);
+    filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 2px #fff);
 }
 
-@keyframes goldShineSweep {
-    to {
-        background-position: 250% center;
-    }
+.main-title.couple-connector,
+h2.main-title:nth-of-type(3) {
+    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(0.72rem, 2.0vw, 0.95rem);
+    letter-spacing: 0.8px;
+    line-height: 0.95;
+    margin: 0 auto;
+    text-transform: lowercase;
+    color: #7d121c;
+    background: none;
+    -webkit-text-fill-color: #7d121c;
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95));
 }
 
 .wedding-date-hero {
@@ -918,25 +931,22 @@ h4 {
 }
 
 .hero-auspicious-tag {
-    display: inline-block;
-    width: auto;
-    max-width: 92%;
-    margin: 10px auto 0 auto;
-    padding: 6px 22px;
-    background: linear-gradient(135deg, rgba(92, 9, 17, 0.88) 0%, rgba(70, 6, 12, 0.92) 100%);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(250, 231, 139, 0.8);
-    border-radius: 22px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    color: #fffdf9;
+    display: block;
+    width: 100%;
+    margin: 3px auto 0 auto;
+    padding: 0;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    color: #4a0e17;
     font-family: 'Cormorant Garamond', 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.02rem;
+    font-size: clamp(0.54rem, 1.5vw, 0.70rem);
     font-weight: 600;
-    letter-spacing: 0.8px;
-    line-height: 1.35;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.2px;
+    line-height: 1.18;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 245, 220, 0.9);
 }
 
 /* ==========================================================================
@@ -4756,62 +4766,127 @@ h4 {
         transition: opacity 0.6s ease !important;
     }
 
-    /* 2. Hero Section (Shree Ganesh & Proclamation) */
+                /* 2. Hero Section (Shree Ganesh & Proclamation - Top 20%, 45% Width & Reduced Height) */
     .hero {
-        min-height: 520px !important;
-        aspect-ratio: auto !important;
+        min-height: auto !important;
+        aspect-ratio: 1 / 1 !important;
         width: 100% !important;
-        max-width: 100vw !important;
-        padding: 55px 14px 40px 14px !important;
-        background-size: cover !important;
-        background-position: center top !important;
+        max-width: 100% !important;
+        padding-top: 20% !important;
+        padding-bottom: 25% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        background-size: 100% 100% !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
         overflow: hidden !important;
         box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
     }
 
     .hero-content {
-        max-width: 95% !important;
-        width: 100% !important;
-        padding: 10px 8px 0 8px !important;
+        max-width: 45% !important;
+        width: 45% !important;
+        padding: 0 !important;
+        margin: 0 auto !important;
         box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
     }
 
     .ganesha-top {
-        margin-bottom: 6px !important;
+        margin: 0 0 2px 0 !important;
+        line-height: 1 !important;
         opacity: 1 !important;
         transform: none !important;
     }
 
     .ganesha-img {
-        width: 65px !important;
+        width: clamp(28px, 6.5vw, 36px) !important;
         height: auto !important;
-        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4)) !important;
+        border-radius: 3px !important;
+        box-shadow: 0 2px 5px rgba(92, 9, 17, 0.35) !important;
+        filter: drop-shadow(0 2px 5px rgba(160, 100, 20, 0.45)) !important;
     }
 
-    .cinzel.shree-ganesh {
-        font-size: 0.92rem !important;
-        letter-spacing: 2.2px !important;
-        margin-bottom: 6px !important;
+    .cinzel.shree-ganesh,
+    .shree-ganesh {
+        font-size: 0.62rem !important;
+        letter-spacing: 1px !important;
+        white-space: nowrap !important;
+        margin: 0 auto 2px auto !important;
+        line-height: 1.15 !important;
+        color: #5c0911 !important;
+        font-weight: 800 !important;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 245, 220, 0.9) !important;
     }
 
     .sub-title {
-        font-size: clamp(0.85rem, 3.2vw, 0.98rem) !important;
-        line-height: 1.45 !important;
-        margin-bottom: 8px !important;
+        font-size: clamp(0.40rem, 1.3vw, 0.52rem) !important;
+        line-height: 1.22 !important;
+        letter-spacing: 0.5px !important;
+        margin: 0 auto 2px auto !important;
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+        box-sizing: border-box !important;
+        width: 100% !important;
+        color: #3a141a !important;
+        font-weight: 700 !important;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95) !important;
     }
 
     .main-title {
-        font-size: clamp(2rem, 7.5vw, 2.5rem) !important;
-        letter-spacing: 2px !important;
-        line-height: 1.15 !important;
+        font-size: clamp(0.96rem, 3.4vw, 1.35rem) !important;
+        letter-spacing: 1.2px !important;
+        line-height: 1.02 !important;
+        white-space: nowrap !important;
+        margin: 0 auto !important;
+        color: #5c0911 !important;
+        background: linear-gradient(135deg, #5c0911 0%, #7d121c 50%, #5c0911 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 2px #fff) !important;
+    }
+
+    .main-title.couple-connector,
+    h2.main-title:nth-of-type(3) {
+        font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
+        font-style: italic !important;
+        font-size: clamp(0.70rem, 2.2vw, 0.90rem) !important;
+        letter-spacing: 0.8px !important;
+        line-height: 0.95 !important;
+        margin: 0 auto !important;
+        text-transform: lowercase !important;
+        color: #7d121c !important;
+        background: none !important;
+        -webkit-text-fill-color: #7d121c !important;
+        filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95)) !important;
     }
 
     .hero-auspicious-tag {
-        font-size: 0.88rem !important;
-        line-height: 1.35 !important;
-        padding: 5px 16px !important;
-        margin-top: 8px !important;
-        max-width: 94% !important;
+        display: block !important;
+        width: 100% !important;
+        margin: 3px auto 0 auto !important;
+        padding: 0 !important;
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+        backdrop-filter: none !important;
+        color: #4a0e17 !important;
+        font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
+        font-style: italic !important;
+        font-size: clamp(0.52rem, 1.6vw, 0.66rem) !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.2px !important;
+        line-height: 1.18 !important;
+        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 245, 220, 0.9) !important;
     }
 
     /* 3. Story & Patrika Section */

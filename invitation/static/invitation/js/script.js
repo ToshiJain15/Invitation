@@ -11,111 +11,16 @@
  */
 
 // ==========================================
-// 1. WEB AUDIO SYNTHESIZER (Tones & Effects)
+// 1. ROYAL AUDIO ENGINE (Sound Effects Disabled as per User Request)
+// Only Authentic Shehnai Background Music is enabled
 // ==========================================
 class RoyalAudioEngine {
-    constructor() {
-        this.ctx = null;
-        this.lastSparkleTime = 0;
-    }
-
-    init() {
-        if (!this.ctx) {
-            const AudioContext = window.AudioContext || window.webkitAudioContext;
-            if (AudioContext) {
-                this.ctx = new AudioContext();
-            }
-        }
-        if (this.ctx && this.ctx.state === 'suspended') {
-            this.ctx.resume();
-        }
-    }
-
-    // Wax seal break sound: crisp mechanical snap + bell chime
-    playSealBreak() {
-        this.init();
-        if (!this.ctx) return;
-        const now = this.ctx.currentTime;
-
-        // Low pop/crack
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(140, now);
-        osc.frequency.exponentialRampToValueAtTime(35, now + 0.12);
-
-        gain.gain.setValueAtTime(0.7, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-        osc.start(now);
-        osc.stop(now + 0.15);
-
-        // Crystal chime overtone
-        const chime = this.ctx.createOscillator();
-        const chimeGain = this.ctx.createGain();
-        chime.type = 'sine';
-        chime.frequency.setValueAtTime(1174.66, now); // D6
-        chime.frequency.exponentialRampToValueAtTime(1760, now + 0.4); // A6
-
-        chimeGain.gain.setValueAtTime(0.3, now);
-        chimeGain.gain.exponentialRampToValueAtTime(0.001, now + 0.6);
-
-        chime.connect(chimeGain);
-        chimeGain.connect(this.ctx.destination);
-        chime.start(now);
-        chime.stop(now + 0.6);
-    }
-
-    // Sparkle chime when scratching
-    playSparkleChime() {
-        this.init();
-        if (!this.ctx) return;
-        const now = this.ctx.currentTime;
-        if (now - this.lastSparkleTime < 0.12) return; // throttle
-        this.lastSparkleTime = now;
-
-        const frequencies = [1046.50, 1318.51, 1567.98, 2093.00, 2637.02];
-        const freq = frequencies[Math.floor(Math.random() * frequencies.length)];
-
-        const osc = this.ctx.createOscillator();
-        const gain = this.ctx.createGain();
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, now);
-
-        gain.gain.setValueAtTime(0.08, now);
-        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.22);
-
-        osc.connect(gain);
-        gain.connect(this.ctx.destination);
-        osc.start(now);
-        osc.stop(now + 0.22);
-    }
-
-    // Fairytale fanfare when scratch card is cleared
-    playFanfare() {
-        this.init();
-        if (!this.ctx) return;
-        const now = this.ctx.currentTime;
-        const notes = [587.33, 739.99, 880.00, 1174.66, 1479.98, 1760.00]; // D Major Arpeggio
-
-        notes.forEach((freq, idx) => {
-            const osc = this.ctx.createOscillator();
-            const gain = this.ctx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(freq, now + idx * 0.08);
-
-            gain.gain.setValueAtTime(0, now);
-            gain.gain.setValueAtTime(0.2, now + idx * 0.08);
-            gain.gain.exponentialRampToValueAtTime(0.0001, now + idx * 0.08 + 0.8);
-
-            osc.connect(gain);
-            gain.connect(this.ctx.destination);
-            osc.start(now + idx * 0.08);
-            osc.stop(now + idx * 0.08 + 0.8);
-        });
-    }
+    constructor() {}
+    init() {}
+    // All synthetic sound effects removed as per user request: only Shehnai music plays
+    playSealBreak() {}
+    playSparkleChime() {}
+    playFanfare() {}
 }
 
 const royalAudio = new RoyalAudioEngine();
