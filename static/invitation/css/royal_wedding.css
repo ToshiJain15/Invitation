@@ -816,7 +816,7 @@ h4 {
 }
 
 .hero-content {
-    top: 18%;
+    top: 15%;
     position: relative;
     z-index: 2;
     background: transparent;
@@ -824,8 +824,8 @@ h4 {
     padding: 0;
     border: none;
     box-shadow: none;
-    width: 45%;
-    max-width: 45%;
+    width: 56%;
+    max-width: 56%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -850,76 +850,92 @@ h4 {
 }
 
 .ganesha-top {
-    margin: 0 0 2px 0;
+    margin: 0 auto 5px auto;
     line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .ganesha-img {
-    width: clamp(28px, 5.5vw, 40px);
+    width: clamp(58px, 6.8vw, 80px);
+    max-height: 92px;
     height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(92, 9, 17, 0.35);
-    filter: drop-shadow(0 2px 6px rgba(160, 100, 20, 0.45));
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    filter: drop-shadow(0 4px 10px rgba(92, 9, 17, 0.22)) drop-shadow(0 0 12px rgba(212, 160, 23, 0.42));
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.ganesha-img:hover {
+    transform: scale(1.06);
+    filter: drop-shadow(0 6px 14px rgba(92, 9, 17, 0.3)) drop-shadow(0 0 18px rgba(212, 160, 23, 0.65));
 }
 
 .shree-ganesh {
-    padding: 5px;
-    color: #5c0911;
-    font-size: 0.62rem;
-    letter-spacing: 1px;
-    white-space: nowrap !important;
-    margin: 0 auto 2px auto;
-    font-weight: 800;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 5px rgba(255, 245, 220, 0.9);
     font-family: 'Cinzel', serif;
+    font-size: clamp(0.70rem, 1.3vw, 0.82rem);
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #5c0911;
+    white-space: nowrap !important;
+    margin: 4px auto 6px auto;
+    padding: 0;
     line-height: 1.15;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 6px rgba(255, 245, 220, 0.8);
 }
 
 .sub-title {
-    padding-top: 5px;
-    padding-bottom: 10px;
-    font-size: clamp(0.42rem, 1.2vw, 0.55rem);
-    letter-spacing: 0.6px;
-    text-transform: uppercase;
-    margin: 0 auto 2px auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    box-sizing: border-box;
-    color: #3a141a;
-    font-weight: 700;
-    line-height: 1.22;
-    width: 100%;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95);
     font-family: 'Cinzel', serif;
+    font-size: clamp(0.60rem, 1.25vw, 0.76rem);
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    line-height: 1.35;
+    color: #451b22;
+    text-transform: uppercase;
+    margin: 0 auto 8px auto;
+    padding: 0 12px;
+    box-sizing: border-box;
+    width: 100%;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
 }
 
 .main-title {
-    font-family: 'Cinzel Decorative', 'Cinzel', serif;
-    font-size: clamp(0.98rem, 3.2vw, 1.45rem);
-    line-height: 1.02;
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+    font-weight: 800;
+    letter-spacing: 3px;
+    line-height: 1.05;
     margin: 0 auto;
-    letter-spacing: 1.2px;
     white-space: nowrap !important;
-    background: linear-gradient(135deg, #5c0911 0%, #7d121c 50%, #5c0911 100%);
+    color: #5c0911;
+    background: linear-gradient(135deg, #5c0911 0%, #7d121c 50%, #4a080e 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 2px #fff);
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 1px rgba(201, 158, 50, 0.4));
+}
+
+.groom-name {
+    word-spacing: 12px;
+    letter-spacing: 3.5px;
 }
 
 .main-title.couple-connector,
 h2.main-title:nth-of-type(3) {
-    font-family: 'Cormorant Garamond', 'Playfair Display', serif;
-    font-style: italic;
-    font-size: clamp(0.72rem, 2.0vw, 0.95rem);
-    letter-spacing: 0.8px;
-    line-height: 0.95;
-    margin: 0 auto;
+    font-family: 'Alex Brush', cursive;
+    font-size: clamp(1.4rem, 3.2vw, 2.0rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 2px auto;
     text-transform: lowercase;
-    color: #7d121c;
+    color: #8f2d3d;
     background: none;
-    -webkit-text-fill-color: #7d121c;
-    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95));
+    -webkit-text-fill-color: #8f2d3d;
+    filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.9));
 }
 
 .wedding-date-hero {
@@ -935,24 +951,26 @@ h2.main-title:nth-of-type(3) {
 }
 
 .hero-auspicious-tag {
-    padding-left: 65px;
-    padding-right: 70px;
-    padding-top: 20px;
     display: block;
     width: 100%;
-    margin: 3px auto 0 auto;
+    margin: 10px auto 0 auto;
+    padding: 6px 36px 6px 60px;
+    padding-left: 60px !important;
+    padding-right: 36px !important;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     color: #4a0e17;
     font-family: 'Cormorant Garamond', 'Playfair Display', serif;
     font-style: italic;
-    font-size: clamp(0.54rem, 1.5vw, 0.70rem);
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    line-height: 1.18;
-    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 245, 220, 0.9);
+    font-size: clamp(0.70rem, 1.35vw, 0.85rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 1.35;
+    text-shadow: 0 1px 2px #ffffff, 0 0 6px rgba(255, 255, 255, 0.95), 0 0 12px rgba(255, 248, 225, 0.9);
+    box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -3817,9 +3835,11 @@ h2.main-title:nth-of-type(3) {
 .heart-scratch-canvas {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
     z-index: 5;
+    clip-path: url(#heartClip);
+    -webkit-clip-path: url(#heartClip);
     transition: opacity 0.5s ease;
 }
 
@@ -4821,8 +4841,8 @@ h2.main-title:nth-of-type(3) {
     }
 
     .hero-content {
-        max-width: 45% !important;
-        width: 45% !important;
+        max-width: 58% !important;
+        width: 58% !important;
         padding: 0 !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
@@ -4831,29 +4851,37 @@ h2.main-title:nth-of-type(3) {
         align-items: center !important;
         justify-content: center !important;
         text-align: center !important;
+        top: 14% !important;
     }
 
     .ganesha-top {
-        margin: 0 0 2px 0 !important;
+        margin: 0 auto 3px auto !important;
         line-height: 1 !important;
         opacity: 1 !important;
         transform: none !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 
     .ganesha-img {
-        width: clamp(28px, 6.5vw, 36px) !important;
+        width: clamp(46px, 12vw, 56px) !important;
+        max-height: 64px !important;
         height: auto !important;
-        border-radius: 3px !important;
-        box-shadow: 0 2px 5px rgba(92, 9, 17, 0.35) !important;
-        filter: drop-shadow(0 2px 5px rgba(160, 100, 20, 0.45)) !important;
+        object-fit: contain !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        filter: drop-shadow(0 3px 8px rgba(92, 9, 17, 0.2)) drop-shadow(0 0 10px rgba(212, 160, 23, 0.38)) !important;
     }
 
     .cinzel.shree-ganesh,
     .shree-ganesh {
-        font-size: 0.62rem !important;
-        letter-spacing: 1px !important;
+        font-size: 0.65rem !important;
+        letter-spacing: 1.2px !important;
         white-space: nowrap !important;
-        margin: 0 auto 2px auto !important;
+        margin: 2px auto 4px auto !important;
+        padding: 0 !important;
         line-height: 1.15 !important;
         color: #5c0911 !important;
         font-weight: 800 !important;
@@ -4861,12 +4889,11 @@ h2.main-title:nth-of-type(3) {
     }
 
     .sub-title {
-        font-size: clamp(0.40rem, 1.3vw, 0.52rem) !important;
-        line-height: 1.22 !important;
-        letter-spacing: 0.5px !important;
-        margin: 0 auto 2px auto !important;
-        padding-left: 25px !important;
-        padding-right: 25px !important;
+        font-size: clamp(0.48rem, 1.4vw, 0.58rem) !important;
+        line-height: 1.28 !important;
+        letter-spacing: 0.8px !important;
+        margin: 0 auto 5px auto !important;
+        padding: 0 4px !important;
         box-sizing: border-box !important;
         width: 100% !important;
         color: #3a141a !important;
@@ -4875,9 +4902,9 @@ h2.main-title:nth-of-type(3) {
     }
 
     .main-title {
-        font-size: clamp(0.96rem, 3.4vw, 1.35rem) !important;
-        letter-spacing: 1.2px !important;
-        line-height: 1.02 !important;
+        font-size: clamp(1.2rem, 3.8vw, 1.45rem) !important;
+        letter-spacing: 2px !important;
+        line-height: 1.05 !important;
         white-space: nowrap !important;
         margin: 0 auto !important;
         color: #5c0911 !important;
@@ -4885,41 +4912,48 @@ h2.main-title:nth-of-type(3) {
         -webkit-background-clip: text !important;
         background-clip: text !important;
         -webkit-text-fill-color: transparent !important;
-        filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.95)) drop-shadow(0 0 2px #fff) !important;
+        filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95)) !important;
+    }
+
+    .groom-name {
+        word-spacing: 8px !important;
     }
 
     .main-title.couple-connector,
     h2.main-title:nth-of-type(3) {
-        font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
-        font-style: italic !important;
-        font-size: clamp(0.70rem, 2.2vw, 0.90rem) !important;
+        font-family: 'Alex Brush', cursive !important;
+        font-size: clamp(1.15rem, 3.2vw, 1.4rem) !important;
         letter-spacing: 0.8px !important;
-        line-height: 0.95 !important;
-        margin: 0 auto !important;
+        line-height: 1 !important;
+        margin: 1px auto !important;
         text-transform: lowercase !important;
-        color: #7d121c !important;
+        color: #8f2d3d !important;
         background: none !important;
-        -webkit-text-fill-color: #7d121c !important;
+        -webkit-text-fill-color: #8f2d3d !important;
         filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.95)) !important;
     }
 
-    .hero-auspicious-tag {
+                            .hero-auspicious-tag {
         display: block !important;
         width: 100% !important;
-        margin: 3px auto 0 auto !important;
-        padding: 0 !important;
+        margin: 6px auto 0 auto !important;
+        padding: 6px 25px 6px 48px !important;
+        padding-left: 48px !important;
+        padding-right: 25px !important;
         background: none !important;
         border: none !important;
         box-shadow: none !important;
         backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
         color: #4a0e17 !important;
         font-family: 'Cormorant Garamond', 'Playfair Display', serif !important;
         font-style: italic !important;
-        font-size: clamp(0.52rem, 1.6vw, 0.66rem) !important;
-        font-weight: 600 !important;
-        letter-spacing: 0.2px !important;
-        line-height: 1.18 !important;
-        text-shadow: 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 4px rgba(255, 245, 220, 0.9) !important;
+        font-size: clamp(0.58rem, 1.8vw, 0.68rem) !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.3px !important;
+        line-height: 1.35 !important;
+        text-shadow: 0 1px 2px #ffffff, 0 0 6px rgba(255, 255, 255, 0.95), 0 0 10px rgba(255, 248, 225, 0.9) !important;
+        box-sizing: border-box !important;
     }
 
     /* 3. Story & Patrika Section */
