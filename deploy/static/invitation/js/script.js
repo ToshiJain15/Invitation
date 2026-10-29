@@ -195,16 +195,24 @@ function setupHeartCanvas(idx) {
     const item = heartCanvases[idx];
     if (!item) return;
     const { canvas, ctx } = item;
-    const rect = canvas.parentElement.getBoundingClientRect();
+    const parent = canvas.parentElement;
+    const rect = parent ? parent.getBoundingClientRect() : { width: 148, height: 138 };
+    const w = Math.round(rect.width || (parent ? parent.offsetWidth : 148) || 148);
+    const h = Math.round(rect.height || (parent ? parent.offsetHeight : 138) || 138);
     const dpr = window.devicePixelRatio || 1;
 
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    canvas.style.width = `${rect.width}px`;
-    canvas.style.height = `${rect.height}px`;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
 
+    if (ctx.resetTransform) {
+        ctx.resetTransform();
+    } else {
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+    }
     ctx.scale(dpr, dpr);
-    drawHeartFoil(idx);
+    drawHeartFoil(idx, w, h);
 
     // Scratch interaction listeners
     canvas.onmousedown = (e) => startScratchHeart(idx, e);
@@ -212,16 +220,16 @@ function setupHeartCanvas(idx) {
     canvas.ondblclick = () => revealHeart(idx);
 }
 
-function drawHeartFoil(idx) {
+function drawHeartFoil(idx, widthOverride, heightOverride) {
     const item = heartCanvases[idx];
     if (!item) return;
     const { canvas, ctx } = item;
-    const w = canvas.offsetWidth;
-    const h = canvas.offsetHeight;
+    const w = widthOverride || canvas.offsetWidth || 148;
+    const h = heightOverride || canvas.offsetHeight || 138;
 
     ctx.globalCompositeOperation = 'source-over';
 
-    // Rich metallic gold gradient
+    // Rich metallic gold gradient covering the entire heart canvas
     const grad = ctx.createLinearGradient(0, 0, w, h);
     grad.addColorStop(0, '#916315');
     grad.addColorStop(0.2, '#fae78b');
@@ -233,29 +241,24 @@ function drawHeartFoil(idx) {
     ctx.fillStyle = grad;
     ctx.fillRect(0, 0, w, h);
 
-    // Gold foil dust flecks
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.35)';
-    for (let i = 0; i < 280; i++) {
+    // Gold foil sparkle dust flecks
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+    for (let i = 0; i < 300; i++) {
         ctx.fillRect(Math.random() * w, Math.random() * h, 1.5, 1.5);
     }
-    ctx.fillStyle = 'rgba(70, 35, 5, 0.25)';
-    for (let i = 0; i < 180; i++) {
+    ctx.fillStyle = 'rgba(70, 35, 5, 0.28)';
+    for (let i = 0; i < 200; i++) {
         ctx.fillRect(Math.random() * w, Math.random() * h, 1.2, 1.2);
     }
-
-    // Heart decorative border
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.45)';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(10, 10, w - 20, h - 20);
 
     // Embossed prompt
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.fillStyle = '#5c0911';
-    ctx.font = 'bold 12px Cinzel, serif';
-    ctx.fillText('SCRATCH', w / 2, h / 2 - 6);
+    ctx.font = 'bold 13px Cinzel, serif';
+    ctx.fillText('SCRATCH', w / 2, h / 2 - 7);
     ctx.font = '15px serif';
-    ctx.fillText('✨', w / 2, h / 2 + 14);
+    ctx.fillText('✨', w / 2, h / 2 + 13);
 }
 
 function getHeartPos(canvas, clientX, clientY) {
@@ -1049,7 +1052,7 @@ const ROYAL_TRANSLATIONS = {
     "bride_name": "TOSHI",
     "couple_connector": "with",
     "groom_name": "VIPUL SA",
-    "hero_tag": "Under the celestial constellation of love, grace & eternal devotion",
+    "hero_tag": "Under the celestial constellation of love, grace &<br>eternal devotion",
     "blessing_lead": "With The Blessings Of",
     "grandparents_names": "Smt. Premlata Bohra & Late Shree Pukhraj Sa Bohra",
     "grandparents_request": "Request the pleasure of your gracious presence on this auspicious occasion of the wedding ceremony of their beloved",
@@ -1065,8 +1068,8 @@ const ROYAL_TRANSLATIONS = {
     "heart_lbl_0": "DAY",
     "heart_lbl_1": "DEC",
     "heart_lbl_2": "2026",
-    "scratch_reveal_all": "<i class=\"fas fa-magic\"></i> Reveal All",
-    "scratch_again": "<i class=\"fas fa-redo\"></i> Scratch Again",
+    "scratch_reveal_all": "Reveal All",
+    "scratch_again": "Scratch Again",
     "countdown_title": "Until the Royal Celebrations Begin",
     "countdown_days": "Days",
     "countdown_hours": "Hours",
@@ -1158,7 +1161,7 @@ const ROYAL_TRANSLATIONS = {
     "bride_name": "तोषी",
     "couple_connector": "संग",
     "groom_name": "विपुल सा",
-    "hero_tag": "प्रेम, अनुग्रह एवं अनन्त समर्पण के पावन नक्षत्र में",
+    "hero_tag": "प्रेम, अनुग्रह एवं अनन्त समर्पण के<br>पावन नक्षत्र में",
     "blessing_lead": "परम पूज्य का शुभाशीर्वाद",
     "grandparents_names": "श्रीमती प्रेमलता बोहरा एवं स्व. श्री पुखराज सा बोहरा",
     "grandparents_request": "अपनी लाडली के इस मंगलमय शुभ विवाह के पावन अवसर पर आपकी गरिमामयी उपस्थिति एवं शुभाशीष की सादर कामना करते हैं",
@@ -1174,8 +1177,8 @@ const ROYAL_TRANSLATIONS = {
     "heart_lbl_0": "दिन",
     "heart_lbl_1": "दिसंबर",
     "heart_lbl_2": "२०२६",
-    "scratch_reveal_all": "<i class=\"fas fa-magic\"></i> सब दिखाएं",
-    "scratch_again": "<i class=\"fas fa-redo\"></i> पुनः स्क्रैच करें",
+    "scratch_reveal_all": "सब दिखाएं",
+    "scratch_again": "पुनः स्क्रैच करें",
     "countdown_title": "शाही मंगल उत्सव प्रारम्भ होने में शेष समय",
     "countdown_days": "दिन",
     "countdown_hours": "घंटे",

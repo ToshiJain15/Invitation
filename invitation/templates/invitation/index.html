@@ -23,7 +23,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'invitation/css/royal_wedding.css' %}?v=1.2">
+    <link rel="stylesheet" href="{% static 'invitation/css/royal_wedding.css' %}?v=1.3">
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -147,12 +147,12 @@
              HERO SECTION (AUSPICIOUS INVOCATION & PROCLAMATION) - PAGES 1 & 2
              ========================================================================== -->
         <section id="hero" class="hero jain-theme-bg"
-            style="background-image: url('{% static 'invitation/images/bg_full.png' %}');">
+            style="background-image: url('{% static 'invitation/images/bg_full.png' %}?v=2.0');">
             <div class="hero-content" data-aos="zoom-in" data-aos-duration="1400">
 
                 <!-- Lord Ganesha in Palace Arch -->
                 <div class="ganesha-top" data-aos="fade-down" data-aos-delay="200">
-                    <img src="{% static 'invitation/images/ganesha.png' %}" alt="Lord Ganesha" class="ganesha-img">
+                    <img src="{% static 'invitation/images/ganesha_lotus.png' %}" alt="Lord Ganesha" class="ganesha-img">
                 </div>
 
                 <p class="cinzel shree-ganesh" data-i18n="shree_ganesh">|| SHREE GANESHAYA NAMAH ||</p>
@@ -160,7 +160,7 @@
                 <h2 class="main-title bride-name" data-i18n="bride_name">TOSHI</h2>
                 <h2 class="main-title couple-connector" data-i18n="couple_connector">with</h2>
                 <h2 class="main-title groom-name" data-i18n="groom_name">VIPUL SA</h2>
-                <p class="hero-auspicious-tag" data-i18n="hero_tag">Under the celestial constellation of love, grace & eternal devotion</p>
+                <p class="hero-auspicious-tag" data-i18n="hero_tag">Under the celestial constellation of love, grace &amp;<br>eternal devotion</p>
             </div>
         </section>
 
@@ -287,11 +287,11 @@
 
                     <!-- Interactive Controls -->
                     <div class="scratch-card-actions">
-                        <button class="btn-scratch-reset" onclick="revealAllHearts()" data-i18n="scratch_reveal_all">
-                            <i class="fas fa-magic"></i> Reveal All
+                        <button class="btn-scratch-reset" onclick="revealAllHearts()">
+                            <i class="fas fa-magic"></i> <span data-i18n="scratch_reveal_all">Reveal All</span>
                         </button>
-                        <button class="btn-scratch-reset" onclick="resetAllHearts()" data-i18n="scratch_again">
-                            <i class="fas fa-redo"></i> Scratch Again
+                        <button class="btn-scratch-reset" onclick="resetAllHearts()">
+                            <i class="fas fa-redo"></i> <span data-i18n="scratch_again">Scratch Again</span>
                         </button>
                     </div>
                 </div>
@@ -845,7 +845,7 @@
     </script>
 
     <!-- Custom JS -->
-    <script src="{% static 'invitation/js/script.js' %}?v=3.1"></script>
+    <script src="{% static 'invitation/js/script.js' %}?v=3.2"></script>
 </body>
 
 </html>
