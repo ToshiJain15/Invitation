@@ -816,6 +816,7 @@ h4 {
 }
 
 .hero-content {
+    top: 18%;
     position: relative;
     z-index: 2;
     background: transparent;
@@ -862,6 +863,7 @@ h4 {
 }
 
 .shree-ganesh {
+    padding: 5px;
     color: #5c0911;
     font-size: 0.62rem;
     letter-spacing: 1px;
@@ -874,12 +876,14 @@ h4 {
 }
 
 .sub-title {
+    padding-top: 5px;
+    padding-bottom: 10px;
     font-size: clamp(0.42rem, 1.2vw, 0.55rem);
     letter-spacing: 0.6px;
     text-transform: uppercase;
     margin: 0 auto 2px auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 40px;
+    padding-right: 40px;
     box-sizing: border-box;
     color: #3a141a;
     font-weight: 700;
@@ -931,10 +935,12 @@ h2.main-title:nth-of-type(3) {
 }
 
 .hero-auspicious-tag {
+    padding-left: 65px;
+    padding-right: 70px;
+    padding-top: 20px;
     display: block;
     width: 100%;
     margin: 3px auto 0 auto;
-    padding: 0;
     background: none !important;
     border: none !important;
     box-shadow: none !important;
@@ -1012,11 +1018,11 @@ h2.main-title:nth-of-type(3) {
     justify-content: space-between;
     align-items: stretch;
     margin: 35px auto 45px auto;
-    max-width: 600px;
-    background: rgba(255, 255, 255, 0.7);
+    max-width: 640px;
+    background: rgba(255, 255, 255, 0.75);
     border: 1px solid rgba(201, 158, 50, 0.35);
     border-radius: 8px;
-    padding: 30px 20px;
+    padding: 28px 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 }
 
@@ -1024,43 +1030,67 @@ h2.main-title:nth-of-type(3) {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
 }
 
 .family-crest-badge {
     font-size: 1.5rem;
     color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-.role {
-    font-family: 'Cinzel', serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    color: var(--text-gold);
-    line-height: 1.5;
-}
-
-.relation {
-    font-style: italic;
-    font-size: 0.88rem;
-    color: #6d635c;
-    margin: 10px 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
 }
 
 .candidate-name {
     font-family: 'Cinzel Decorative', cursive;
     color: var(--primary-color);
-    font-size: 2.3rem;
-    margin-top: 5px;
+    font-size: clamp(1.85rem, 3.8vw, 2.2rem);
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 6px 0;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+}
+
+.relation {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: #6d635c;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 8px 0;
+}
+
+.role {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.74rem, 1.55vw, 0.86rem);
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: var(--text-gold);
+    line-height: 1.5;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .vertical-divider {
     width: 1px;
     background: linear-gradient(to bottom, transparent, var(--secondary-color), transparent);
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 /* Couple Illustration Frame */
@@ -4468,14 +4498,17 @@ h2.main-title:nth-of-type(3) {
         transform: rotateX(0deg);
         z-index: 8;
     }
+
     49.9% {
         transform: rotateX(90deg);
         z-index: 8;
     }
+
     50% {
         transform: rotateX(90deg);
         z-index: 1;
     }
+
     100% {
         transform: rotateX(180deg);
         z-index: 1;
@@ -4733,8 +4766,10 @@ h2.main-title:nth-of-type(3) {
    ========================================================================== */
 
 @media (max-width: 768px) {
+
     /* 1. Global Box Sizing & Overflow Prevention */
-    html, body {
+    html,
+    body {
         max-width: 100% !important;
         overflow-x: hidden !important;
     }
@@ -4764,7 +4799,7 @@ h2.main-title:nth-of-type(3) {
         transition: opacity 0.6s ease !important;
     }
 
-                /* 2. Hero Section (Shree Ganesh & Proclamation - Top 20%, 45% Width & Reduced Height) */
+    /* 2. Hero Section (Shree Ganesh & Proclamation - Top 20%, 45% Width & Reduced Height) */
     .hero {
         min-height: auto !important;
         aspect-ratio: 1 / 1 !important;
@@ -4938,9 +4973,26 @@ h2.main-title:nth-of-type(3) {
         display: none !important;
     }
 
+    .family-crest-badge {
+        height: auto !important;
+        margin-bottom: 6px !important;
+    }
+
     .candidate-name {
         font-size: 2.1rem !important;
-        margin: 6px 0 !important;
+        height: auto !important;
+        margin: 4px 0 !important;
+    }
+
+    .relation {
+        height: auto !important;
+        margin: 4px 0 !important;
+    }
+
+    .role {
+        height: auto !important;
+        font-size: clamp(0.74rem, 3.2vw, 0.9rem) !important;
+        white-space: normal !important;
     }
 
     .romantic-quote {
