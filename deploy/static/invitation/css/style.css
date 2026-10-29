@@ -4498,7 +4498,7 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding-top: 50px;
+    padding-top: 24px;
     filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
     border-radius: 14px 14px 0 0;
     backface-visibility: hidden;
@@ -4506,12 +4506,14 @@ h4 {
 }
 
 .flap-calligraphy {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.85rem;
+    font-family: 'Alex Brush', 'Great Vibes', cursive;
+    font-size: 3.3rem;
+    font-weight: 500;
     color: #ffffff;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
-    transform: rotate(-4deg);
-    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 1px #ffffff;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85));
+    transform: rotate(-2deg);
+    letter-spacing: 2px;
 }
 
 /* Flap Back Face (Gold Brocade Lining when Opened) */
@@ -4639,12 +4641,14 @@ h4 {
     }
 
     .flap-calligraphy {
-        font-size: 2.1rem;
-        padding-top: 10px;
+        font-size: 2.45rem;
+        padding-top: 0;
+        letter-spacing: 1.5px;
+        transform: rotate(-2deg);
     }
 
     .flap-face-front {
-        padding-top: 36px;
+        padding-top: 16px;
     }
 
     .handmade-vt-wax-seal {
