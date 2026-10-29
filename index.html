@@ -15,20 +15,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@400;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Cinzel:wght@400;600;700;800;900&family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rozha+One&family=Noto+Serif+Devanagari:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="static/invitation/css/royal_wedding.css?v=1.1">
+    <link rel="stylesheet" href="static/invitation/css/royal_wedding.css?v=1.2">
 
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
+    <!-- Royal Language Switcher Pill (ENG | हिन्दी) -->
+    <div class="royal-lang-pill-container" id="royalLangPill" title="भाषा बदलें / Change Language">
+        <button class="royal-lang-btn active" id="lang-pill-en" onclick="setLanguage('en')">ENG</button>
+        <span class="royal-lang-sep">|</span>
+        <button class="royal-lang-btn" id="lang-pill-hi" onclick="setLanguage('hi')">हिन्दी</button>
+    </div>
+
     <!-- Global Scalable SVG Heart ClipPath -->
     <svg width="0" height="0" style="position: absolute; pointer-events: none;" aria-hidden="true">
         <defs>
@@ -70,9 +77,9 @@
                     <div class="peeking-card-content">
                         <img src="static/invitation/images/ganesha_clean.png" alt="Lord Ganesha"
                             class="peeking-ganesha">
-                        <p class="peeking-invocation">|| SHREE GANESHAYA NAMAH ||</p>
-                        <h2 class="peeking-couple">VIPUL & TOSHI</h2>
-                        <p class="peeking-tag">The Royal Wedding Invitation</p>
+                        <p class="peeking-invocation" data-i18n="peeking_invocation">|| SHREE GANESHAYA NAMAH ||</p>
+                        <h2 class="peeking-couple" data-i18n="peeking_couple">VIPUL & TOSHI</h2>
+                        <p class="peeking-tag" data-i18n="peeking_tag">The Royal Wedding Invitation</p>
                     </div>
                 </div>
 
@@ -95,7 +102,7 @@
                 <div class="handmade-top-flap" id="handmadeTopFlap">
                     <!-- Front face: Dark charcoal paper with "You are invited!" script -->
                     <div class="flap-face-front">
-                        <span class="flap-calligraphy">You are invited!</span>
+                        <span class="flap-calligraphy" data-i18n="flap_calligraphy">You are invited!</span>
                     </div>
                     <!-- Back face: Gold brocade lining revealed when flipped up -->
                     <div class="flap-face-back"></div>
@@ -107,13 +114,13 @@
                     <img src="static/invitation/images/gold_wax_seal_vt.png" alt="Royal V&T Wax Seal"
                         class="wax-seal-img">
                     <div class="seal-halo-pulse"></div>
-                    <span class="seal-tap-badge">TAP TO OPEN</span>
+                    <span class="seal-tap-badge" data-i18n="seal_tap_badge">TAP TO OPEN</span>
                 </div>
             </div>
 
             <!-- "Click Here to Open..." call-to-action matching reference photo -->
             <div class="handmade-open-prompt">
-                <span class="open-prompt-text">Click Here to Open...</span>
+                <span class="open-prompt-text" data-i18n="open_prompt_text">Click Here to Open...</span>
                 <div class="open-prompt-sparkles">✦</div>
             </div>
         </div>
@@ -147,12 +154,12 @@
                     <img src="static/invitation/images/ganesha.png" alt="Lord Ganesha" class="ganesha-img">
                 </div>
 
-                <p class="cinzel shree-ganesh">|| SHREE GANESHAYA NAMAH ||</p>
-                <h2 class="sub-title">With immense joy and divine blessings, we invite you to witness the union of</h2>
-                <h2 class="main-title bride-name">TOSHI</h2>
-                <h2 class="main-title couple-connector">with</h2>
-                <h2 class="main-title groom-name">VIPUL SA</h2>
-                <p class="hero-auspicious-tag">Under the celestial constellation of love, grace & eternal devotion</p>
+                <p class="cinzel shree-ganesh" data-i18n="shree_ganesh">|| SHREE GANESHAYA NAMAH ||</p>
+                <h2 class="sub-title" data-i18n="hero_subtitle">With immense joy and divine blessings, we invite you to witness the union of</h2>
+                <h2 class="main-title bride-name" data-i18n="bride_name">TOSHI</h2>
+                <h2 class="main-title couple-connector" data-i18n="couple_connector">with</h2>
+                <h2 class="main-title groom-name" data-i18n="groom_name">VIPUL SA</h2>
+                <p class="hero-auspicious-tag" data-i18n="hero_tag">Under the celestial constellation of love, grace & eternal devotion</p>
             </div>
         </section>
 
@@ -165,9 +172,9 @@
                 <!-- Grandparents Blessing Card (Page 3) -->
                 <div class="grandparents-blessing-card" data-aos="fade-up" data-aos-duration="1000">
                     <span class="blessing-lotus-ornament">𑁍</span>
-                    <p class="blessing-lead-label">With The Blessings Of</p>
-                    <h3 class="grandparents-names">Smt. Premlata Bohra & Late Shree Pukhraj Sa Bohra</h3>
-                    <p class="grandparents-request">
+                    <p class="blessing-lead-label" data-i18n="blessing_lead">With The Blessings Of</p>
+                    <h3 class="grandparents-names" data-i18n="grandparents_names">Smt. Premlata Bohra & Late Shree Pukhraj Sa Bohra</h3>
+                    <p class="grandparents-request" data-i18n="grandparents_request">
                         Request the pleasure of your gracious presence on this auspicious occasion of the wedding
                         ceremony of their beloved
                     </p>
@@ -189,9 +196,9 @@
                     <!-- Bride's Parents -->
                     <div class="parent-side" data-aos="fade-left" data-aos-duration="1000">
                         <div class="family-crest-badge"><i class="fas fa-crown"></i></div>
-                        <h3 class="candidate-name">Toshi</h3>
-                        <span class="relation">Beloved Daughter of</span>
-                        <span class="role">Smt. NEELAM BOHRA &amp;<br>Shree MANOJ BOHRA</span>
+                        <h3 class="candidate-name" data-i18n="cand_toshi">Toshi</h3>
+                        <span class="relation" data-i18n="bride_relation">Beloved Daughter of</span>
+                        <span class="role" data-i18n="bride_parents">Smt. NEELAM BOHRA &amp;<br>Shree MANOJ BOHRA</span>
                     </div>
 
                     <div class="vertical-divider"></div>
@@ -199,13 +206,13 @@
                     <!-- Groom's Parents -->
                     <div class="parent-side" data-aos="fade-right" data-aos-duration="1000">
                         <div class="family-crest-badge"><i class="fas fa-crown"></i></div>
-                        <h3 class="candidate-name">Vipul Sa</h3>
-                        <span class="relation">Beloved Son of</span>
-                        <span class="role">Smt. SARITA SANCHETI &amp;<br>Shree ARVIND SA SANCHETI</span>
+                        <h3 class="candidate-name" data-i18n="cand_vipul">Vipul Sa</h3>
+                        <span class="relation" data-i18n="groom_relation">Beloved Son of</span>
+                        <span class="role" data-i18n="groom_parents">Smt. SARITA SANCHETI &amp;<br>Shree ARVIND SA SANCHETI</span>
                     </div>
                 </div>
 
-                <p class="romantic-quote" data-aos="fade-up">
+                <p class="romantic-quote" data-aos="fade-up" data-i18n="romantic_quote">
                     <span class="drop-cap">T</span>wo hearts, two families, one beautiful fairytale destiny. We warmly
                     invite you to share our joy, shower your heartfelt blessings, and be an unforgettable part of our
                     most sacred celebration.
@@ -227,8 +234,8 @@
             <div class="container" data-aos="fade-up">
                 <div class="scratch-card-wrapper">
                     <div class="scratch-header-crest">⚜</div>
-                    <h2 class="scratch-card-title">The Royal Shubh Muhurat</h2>
-                    <p class="scratch-card-instructions">
+                    <h2 class="scratch-card-title" data-i18n="scratch_title">The Royal Shubh Muhurat</h2>
+                    <p class="scratch-card-instructions" data-i18n="scratch_instructions">
                         <span>✨</span> Scratch each golden heart to unveil our auspicious wedding date <span>✨</span>
                     </p>
 
@@ -239,7 +246,7 @@
                             title="Scratch to reveal wedding day">
                             <div class="heart-revealed-content">
                                 <span class="heart-date-number">21</span>
-                                <span class="heart-date-label">DAY</span>
+                                <span class="heart-date-label" data-i18n="heart_lbl_0">DAY</span>
                             </div>
                             <canvas class="heart-scratch-canvas" id="heart-canvas-0"></canvas>
                             <div class="heart-sparkle-marker">✦</div>
@@ -250,7 +257,7 @@
                             title="Scratch to reveal wedding month">
                             <div class="heart-revealed-content">
                                 <span class="heart-date-number">12</span>
-                                <span class="heart-date-label">DEC</span>
+                                <span class="heart-date-label" data-i18n="heart_lbl_1">DEC</span>
                             </div>
                             <canvas class="heart-scratch-canvas" id="heart-canvas-1"></canvas>
                             <div class="heart-sparkle-marker">✦</div>
@@ -261,7 +268,7 @@
                             title="Scratch to reveal wedding year">
                             <div class="heart-revealed-content">
                                 <span class="heart-date-number">26</span>
-                                <span class="heart-date-label">2026</span>
+                                <span class="heart-date-label" data-i18n="heart_lbl_2">2026</span>
                             </div>
                             <canvas class="heart-scratch-canvas" id="heart-canvas-2"></canvas>
                             <div class="heart-sparkle-marker">✦</div>
@@ -278,10 +285,10 @@
 
                     <!-- Interactive Controls -->
                     <div class="scratch-card-actions">
-                        <button class="btn-scratch-reset" onclick="revealAllHearts()">
+                        <button class="btn-scratch-reset" onclick="revealAllHearts()" data-i18n="scratch_reveal_all">
                             <i class="fas fa-magic"></i> Reveal All
                         </button>
-                        <button class="btn-scratch-reset" onclick="resetAllHearts()">
+                        <button class="btn-scratch-reset" onclick="resetAllHearts()" data-i18n="scratch_again">
                             <i class="fas fa-redo"></i> Scratch Again
                         </button>
                     </div>
@@ -297,23 +304,23 @@
              ========================================================================== -->
         <section class="countdown-section">
             <div class="container">
-                <h3 class="countdown-title" data-aos="fade-down">Until the Royal Celebrations Begin</h3>
+                <h3 class="countdown-title" data-aos="fade-down" data-i18n="countdown_title">Until the Royal Celebrations Begin</h3>
                 <div id="timer" class="timer-grid">
                     <div class="timer-item" data-aos="flip-left" data-aos-delay="50">
                         <span id="days">00</span>
-                        <label>Days</label>
+                        <label data-i18n="countdown_days">Days</label>
                     </div>
                     <div class="timer-item" data-aos="flip-left" data-aos-delay="150">
                         <span id="hours">00</span>
-                        <label>Hours</label>
+                        <label data-i18n="countdown_hours">Hours</label>
                     </div>
                     <div class="timer-item" data-aos="flip-left" data-aos-delay="250">
                         <span id="minutes">00</span>
-                        <label>Minutes</label>
+                        <label data-i18n="countdown_minutes">Minutes</label>
                     </div>
                     <div class="timer-item" data-aos="flip-left" data-aos-delay="350">
                         <span id="seconds">00</span>
-                        <label>Seconds</label>
+                        <label data-i18n="countdown_seconds">Seconds</label>
                     </div>
                 </div>
             </div>
@@ -330,8 +337,8 @@
                 <div class="itinerary-header-crest" data-aos="fade-down">
                     <span class="crest-heart">❤</span>
                 </div>
-                <h2 class="section-title" data-aos="fade-down">The Wedding Itinerary</h2>
-                <p class="itinerary-tagline" data-aos="fade-up">A Fairytale Journey Across Auspicious Celebrations</p>
+                <h2 class="section-title" data-aos="fade-down" data-i18n="itinerary_title">The Wedding Itinerary</h2>
+                <p class="itinerary-tagline" data-aos="fade-up" data-i18n="itinerary_tagline">A Fairytale Journey Across Auspicious Celebrations</p>
 
                 <!-- Journey Navigation Controls -->
                 <div class="itinerary-controls" data-aos="fade-up" data-aos-delay="100">
@@ -344,7 +351,7 @@
                     </button> -->
                     <button class="btn-itinerary-ctrl btn-tour-toggle" id="btnTourMode" onclick="toggleAutoTour()"
                         title="Auto Tour Journey">
-                        <i class="fas fa-play" id="tourIcon"></i> <span id="tourText">Play Journey</span>
+                        <i class="fas fa-play" id="tourIcon"></i> <span id="tourText" data-i18n="tour_play">Play Journey</span>
                     </button>
                 </div>
 
@@ -375,14 +382,14 @@
                                 <div class="marker-branch-line"></div>
                             </div>
                             <div class="timeline-card">
-                                <span class="timeline-badge">STOP 1 • SUNDAY, 20 DEC</span>
-                                <h3 class="timeline-event-title">Haldi: The Carnival Edition</h3>
+                                <span class="timeline-badge" data-i18n="event_1_badge">STOP 1 • SUNDAY, 20 DEC</span>
+                                <h3 class="timeline-event-title" data-i18n="event_1_title">Haldi: The Carnival Edition</h3>
                                 <!-- <p class="timeline-quote">"Colors of love, laughter & new beginnings"</p> -->
                                 <div class="timeline-meta">
                                     <!-- <p class="meta-line"><i class="far fa-calendar-alt"></i> Sunday, 20th December 2026 -->
                                     <!-- </p> -->
-                                    <p class="meta-line"><i class="far fa-clock"></i> 10:00 AM onwards</p>
-                                    <p class="meta-line"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
+                                    <p class="meta-line" data-i18n="event_1_time"><i class="far fa-clock"></i> 10:00 AM onwards</p>
+                                    <p class="meta-line" data-i18n="event_1_venue"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
                                         Circle, Jodhpur</p>
                                 </div>
                                 <!-- <div class="timeline-dress-code">Dress Code: Vibrant Festive Yellows & Pastels</div> -->
@@ -409,11 +416,11 @@
                                 <div class="marker-branch-line"></div>
                             </div>
                             <div class="timeline-card">
-                                <span class="timeline-badge">STOP 2 • SUNDAY, 20 DEC</span>
-                                <h3 class="timeline-event-title">Mayra & Battisi</h3>
+                                <span class="timeline-badge" data-i18n="event_2_badge">STOP 2 • SUNDAY, 20 DEC</span>
+                                <h3 class="timeline-event-title" data-i18n="event_2_title">Mayra & Battisi</h3>
                                 <div class="timeline-meta">
-                                    <p class="meta-line"><i class="far fa-clock"></i> 2:00 PM onwards</p>
-                                    <p class="meta-line"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
+                                    <p class="meta-line" data-i18n="event_2_time"><i class="far fa-clock"></i> 2:00 PM onwards</p>
+                                    <p class="meta-line" data-i18n="event_1_venue"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
                                         Circle, Jodhpur</p>
                                 </div>
                                 <div class="timeline-card-actions">
@@ -439,14 +446,14 @@
                                 <div class="marker-branch-line"></div>
                             </div>
                             <div class="timeline-card">
-                                <span class="timeline-badge">STOP 3 • SUNDAY, 20 DEC</span>
-                                <h3 class="timeline-event-title">Sangeet Sandhya</h3>
+                                <span class="timeline-badge" data-i18n="event_3_badge">STOP 3 • SUNDAY, 20 DEC</span>
+                                <h3 class="timeline-event-title" data-i18n="event_3_title">Sangeet Sandhya</h3>
                                 <!-- <p class="timeline-quote">"An evening of music, dance and endless celebrations"</p> -->
                                 <div class="timeline-meta">
                                     <!-- <p class="meta-line"><i class="far fa-calendar-alt"></i> Sunday, 20th December 2026 -->
                                     <!-- </p> -->
-                                    <p class="meta-line"><i class="far fa-clock"></i> 6:00 PM onwards</p>
-                                    <p class="meta-line"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
+                                    <p class="meta-line" data-i18n="event_3_time"><i class="far fa-clock"></i> 6:00 PM onwards</p>
+                                    <p class="meta-line" data-i18n="event_1_venue"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
                                         Circle, Jodhpur</p>
                                 </div>
                                 <!-- <div class="timeline-dress-code">Dress Code: Regal Rajputana & Velvet Glamour</div> -->
@@ -473,14 +480,14 @@
                                 <div class="marker-branch-line"></div>
                             </div>
                             <div class="timeline-card featured-card">
-                                <span class="timeline-badge featured">STOP 4 • MONDAY, 21 DEC • SHUBH VIVAH</span>
-                                <h3 class="timeline-event-title">Wedding Ceremony</h3>
+                                <span class="timeline-badge featured" data-i18n="event_4_badge">STOP 4 • MONDAY, 21 DEC • SHUBH VIVAH</span>
+                                <h3 class="timeline-event-title" data-i18n="event_4_title">Wedding Ceremony</h3>
                                 <!-- <p class="timeline-quote">"Two souls, one forever — Sacred Pheras & Hastamelap"</p> -->
                                 <div class="timeline-meta">
                                     <!-- <p class="meta-line"><i class="far fa-calendar-alt"></i> Monday, 21st December 2026 -->
                                     <!-- </p> -->
-                                    <p class="meta-line"><i class="far fa-clock"></i> 10:30 AM onwards</p>
-                                    <p class="meta-line"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
+                                    <p class="meta-line" data-i18n="event_4_time"><i class="far fa-clock"></i> 10:30 AM onwards</p>
+                                    <p class="meta-line" data-i18n="event_1_venue"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
                                         Circle, Jodhpur</p>
                                 </div>
                                 <!-- <div class="timeline-dress-code">Dress Code: Royal Heritage Silks & Gold Brocade</div> -->
@@ -507,14 +514,14 @@
                                 <div class="marker-branch-line"></div>
                             </div>
                             <div class="timeline-card">
-                                <span class="timeline-badge">STOP 5 • MONDAY, 21 DEC • THE GRAND FINALE</span>
-                                <h3 class="timeline-event-title">The Gala Reception</h3>
+                                <span class="timeline-badge" data-i18n="event_5_badge">STOP 5 • MONDAY, 21 DEC • THE GRAND FINALE</span>
+                                <h3 class="timeline-event-title" data-i18n="event_5_title">The Gala Reception</h3>
                                 <!-- <p class="timeline-quote">"An evening to cherish new beginnings together"</p> -->
                                 <div class="timeline-meta">
                                     <!-- <p class="meta-line"><i class="far fa-calendar-alt"></i> Monday, 21st December 2026 -->
                                     <!-- </p> -->
-                                    <p class="meta-line"><i class="far fa-clock"></i> 6:00 PM onwards</p>
-                                    <p class="meta-line"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
+                                    <p class="meta-line" data-i18n="event_3_time"><i class="far fa-clock"></i> 6:00 PM onwards</p>
+                                    <p class="meta-line" data-i18n="event_1_venue"><i class="fas fa-map-marker-alt"></i> Sher Garh Rawla, Near DPS
                                         Circle, Jodhpur</p>
                                 </div>
                                 <!-- <div class="timeline-dress-code">Dress Code: Imperial Evening Royale & Splendour</div> -->
@@ -544,52 +551,52 @@
                 <div class="family-header-crest">
                     <span class="crest-lotus">𑁍</span>
                 </div>
-                <h2 class="section-title family-main-title">Bohra's</h2>
-                <p class="family-section-sub">WITH BLESSINGS AND LOVE</p>
+                <h2 class="section-title family-main-title" data-i18n="family_title">Bohra's</h2>
+                <p class="family-section-sub" data-i18n="family_sub">WITH BLESSINGS AND LOVE</p>
 
                 <div class="family-cards-grid">
                     <!-- 1. Warm Welcome -->
                     <div class="royal-family-card card-mauve" data-aos="fade-up" data-aos-delay="50">
-                        <div class="family-card-pill pill-mauve">WARM WELCOME</div>
+                        <div class="family-card-pill pill-mauve" data-i18n="pill_warm_welcome">WARM WELCOME</div>
                         <ul class="family-member-list">
-                            <li>Lt. Smt. Vijay Lakshmi – Shree Devraj Sa</li>
-                            <li>Smt. Shanta – Lt. Shree Nirmal Sa</li>
-                            <li>Vinita – Ravi Sa</li>
-                            <li>Tina – Kuldeep Sa</li>
-                            <li>Jyoti – Abhishek Sa</li>
-                            <li>Anjali – Ellesh Sa</li>
-                            <li class="family-highlight">And Ratanpura Bohra Family</li>
+                            <li data-i18n="family_item_1">Lt. Smt. Vijay Lakshmi – Shree Devraj Sa</li>
+                            <li data-i18n="family_item_2">Smt. Shanta – Lt. Shree Nirmal Sa</li>
+                            <li data-i18n="family_item_3">Vinita – Ravi Sa</li>
+                            <li data-i18n="family_item_4">Tina – Kuldeep Sa</li>
+                            <li data-i18n="family_item_5">Jyoti – Abhishek Sa</li>
+                            <li data-i18n="family_item_6">Anjali – Ellesh Sa</li>
+                            <li class="family-highlight" data-i18n="family_item_7">And Ratanpura Bohra Family</li>
                         </ul>
                     </div>
 
                     <!-- 2. Welcome Regards -->
                     <div class="royal-family-card card-sage" data-aos="fade-up" data-aos-delay="100">
-                        <div class="family-card-pill pill-sage">WELCOME REGARDS</div>
+                        <div class="family-card-pill pill-sage" data-i18n="pill_welcome_regards">WELCOME REGARDS</div>
                         <ul class="family-member-list">
-                            <li>Smt. Prabha - Shree Omprakash Sa Kothari</li>
-                            <li>Smt. Rekha – Shree Umed Raj Sa Lodha</li>
-                            <li>Smt. Monika – Shree Jayanti Sa Parakh</li>
-                            <li>Smt. Bhawna - Shree Parikshit Sa Sancheti</li>
+                            <li data-i18n="regards_1">Smt. Prabha - Shree Omprakash Sa Kothari</li>
+                            <li data-i18n="regards_2">Smt. Rekha – Shree Umed Raj Sa Lodha</li>
+                            <li data-i18n="regards_3">Smt. Monika – Shree Jayanti Sa Parakh</li>
+                            <li data-i18n="regards_4">Smt. Bhawna - Shree Parikshit Sa Sancheti</li>
                         </ul>
                     </div>
 
                     <!-- 3. Maternals -->
                     <div class="royal-family-card card-sage" data-aos="fade-up" data-aos-delay="150">
-                        <div class="family-card-pill pill-sage">MATERNALS</div>
+                        <div class="family-card-pill pill-sage" data-i18n="pill_maternals">MATERNALS</div>
                         <ul class="family-member-list">
-                            <li>Smt. Lalita – Shree Prakashraj Sa</li>
-                            <li>Smt. Chandan bala – Shree Pushparaj Sa</li>
-                            <li class="family-highlight">Shree Mahendra Sa, Dharmendra Sa, Aniil Sa and Singhvi Family
+                            <li data-i18n="maternals_1">Smt. Lalita – Shree Prakashraj Sa</li>
+                            <li data-i18n="maternals_2">Smt. Chandan bala – Shree Pushparaj Sa</li>
+                            <li class="family-highlight" data-i18n="maternals_3">Shree Mahendra Sa, Dharmendra Sa, Aniil Sa and Singhvi Family
                             </li>
-                            <li>Anjana – Gotam Sa</li>
-                            <li>Ranjana – Bhagwati lal Sa</li>
+                            <li data-i18n="maternals_4">Anjana – Gotam Sa</li>
+                            <li data-i18n="maternals_5">Ranjana – Bhagwati lal Sa</li>
                         </ul>
                     </div>
 
                     <!-- 4. Samdhi Pravar -->
                     <div class="royal-family-card card-mauve" data-aos="fade-up" data-aos-delay="200">
-                        <div class="family-card-pill pill-mauve">SAMDHI PRAVAR</div>
-                        <p class="family-samdhi-text">
+                        <div class="family-card-pill pill-mauve" data-i18n="pill_samdhi">SAMDHI PRAVAR</div>
+                        <p class="family-samdhi-text" data-i18n="samdhi_text">
                             Shahji Shreeman Laxmichand sa, Uttamchand sa, Mangilal sa, Madanlal Sa, Gotamchand sa, Ashok
                             Sa, Arvind Sa, Anil sa, Arun Sa, Dilip Sa, Sanjay sa and Sancheti Family, Sojat
                         </p>
@@ -597,8 +604,8 @@
 
                     <!-- 5. Sweet Request -->
                     <div class="royal-family-card card-mauve" data-aos="fade-up" data-aos-delay="250">
-                        <div class="family-card-pill pill-mauve">SWEET REQUEST</div>
-                        <p class="family-names-inline">
+                        <div class="family-card-pill pill-mauve" data-i18n="pill_sweet_req">SWEET REQUEST</div>
+                        <p class="family-names-inline" data-i18n="sweet_req_text">
                             Chirag, Megha-Yash Sa, Muskan, Ridhi, Chhavi, Divyam, Aayushi-Piyush Sa, Arpita-Piyush Sa,
                             Avina, Akshay, Manas
                         </p>
@@ -606,16 +613,16 @@
 
                     <!-- 6. Naughty Request -->
                     <div class="royal-family-card card-sage" data-aos="fade-up" data-aos-delay="300">
-                        <div class="family-card-pill pill-sage">NAUGHTY REQUEST</div>
-                        <p class="family-names-inline naughty-names">
+                        <div class="family-card-pill pill-sage" data-i18n="pill_naughty_req">NAUGHTY REQUEST</div>
+                        <p class="family-names-inline naughty-names" data-i18n="naughty_req_text">
                             Jeeva, Praavi, Rishiv, Tejas, Samyag, Rishika
                         </p>
                     </div>
 
                     <!-- 7. Special Request (Full width) -->
                     <div class="royal-family-card card-special-full" data-aos="fade-up" data-aos-delay="350">
-                        <div class="family-card-pill pill-mauve">SPECIAL REQUEST</div>
-                        <p class="family-special-names">Meena Bohra, Kriti Jain</p>
+                        <div class="family-card-pill pill-mauve" data-i18n="pill_special_req">SPECIAL REQUEST</div>
+                        <p class="family-special-names" data-i18n="special_req_text">Meena Bohra, Kriti Jain</p>
                     </div>
                 </div>
 
@@ -640,21 +647,21 @@
             style="background-image: url('static/invitation/images/destination_bg.png');">
             <div class="venue-overlay"></div>
             <div class="container" data-aos="fade-up">
-                <h2 class="section-title white">The Royal Destination</h2>
+                <h2 class="section-title white" data-i18n="venue_section_title">The Royal Destination</h2>
                 <div class="venue-content">
                     <div class="venue-info">
-                        <h3>Sher Garh Rawla</h3>
-                        <p class="venue-location">
+                        <h3 data-i18n="venue_name">Sher Garh Rawla</h3>
+                        <p class="venue-location" data-i18n="venue_location">
                             <i class="fas fa-map-marker-alt" style="color: var(--secondary-color);"></i> Near DPS
                             Circle, Jodhpur, Rajasthan, India
                         </p>
-                        <p class="venue-desc">
+                        <p class="venue-desc" data-i18n="venue_desc">
                             A majestic heritage palace retreat set amidst the royal sands of Marwar, featuring regal
                             jharokhas, serene courtyards, and palace courtyards. Join us for two unforgettable days of
                             timeless celebrations, laughter, and lifelong memories.
                         </p>
                         <a href="https://maps.google.com/?q=Sher+Garh+Rawla+Near+DPS+Circle+Jodhpur+Rajasthan"
-                            target="_blank" rel="noopener noreferrer" class="btn-venue-map">
+                            target="_blank" rel="noopener noreferrer" class="btn-venue-map" data-i18n="venue_map_btn">
                             <i class="fas fa-location-arrow"></i> Navigate on Google Maps
                         </a>
                     </div>
@@ -742,8 +749,8 @@
                 <!-- Live Stream of Sent Blessings -->
                 <div class="sent-blessings-stream" id="sent-blessings-stream">
                     <div class="sent-blessing-card">
-                        <div class="sent-blessing-author">The Bohra & Sancheti Families</div>
-                        <div class="sent-blessing-text">"With humble hearts, we eagerly await to welcome you to our
+                        <div class="sent-blessing-author" data-i18n="blessing_author">The Bohra & Sancheti Families</div>
+                        <div class="sent-blessing-text" data-i18n="blessing_text">"With humble hearts, we eagerly await to welcome you to our
                             family's joyous celebration."</div>
                     </div>
                 </div>
@@ -763,7 +770,7 @@
                 style="font-family: 'Cinzel', serif; letter-spacing: 2px; color: var(--primary-color); font-size: 0.95rem;">
                 Made with eternal love for Toshi & Vipul Sa
             </p>
-            <p class="tagline">#Vishi</p>
+            <p class="tagline" data-i18n="footer_tagline">#Vishi</p>
         </div>
     </footer>
 
@@ -776,12 +783,12 @@
         <div class="royal-pass-card" onclick="event.stopPropagation()">
             <button class="royal-pass-close" onclick="closeRoyalPassModal()">&times;</button>
             <div class="royal-pass-crest">⚜</div>
-            <h3 class="royal-pass-header">Royal Shahi Entry Pass</h3>
-            <p class="royal-pass-sub">TOSHI & VIPUL SA ROYAL WEDDING</p>
+            <h3 class="royal-pass-header" data-i18n="royal_pass_header">Royal Shahi Entry Pass</h3>
+            <p class="royal-pass-sub" data-i18n="royal_pass_sub">TOSHI & VIPUL SA ROYAL WEDDING</p>
 
             <div class="royal-pass-body">
-                <div id="pass-guest-name" class="pass-guest-name">Honoured Royal Guest</div>
-                <div id="pass-guest-meta" class="pass-guest-meta">Reserved Entry: 2 Guests • Sher Garh Rawla, Jodhpur
+                <div id="pass-guest-name" class="pass-guest-name" data-i18n="pass_guest_name">Honoured Royal Guest</div>
+                <div id="pass-guest-meta" class="pass-guest-meta" data-i18n="pass_guest_meta">Reserved Entry: 2 Guests • Sher Garh Rawla, Jodhpur
                 </div>
             </div>
 
@@ -789,11 +796,11 @@
                 <i class="fas fa-qrcode" style="font-size: 70px; color: var(--primary-color);"></i>
             </div>
 
-            <p style="font-size: 0.85rem; color: #666; font-style: italic; margin-bottom: 15px;">
+            <p data-i18n="pass_quote" style="font-size: 0.85rem; color: #666; font-style: italic; margin-bottom: 15px;">
                 "Your presence is the most auspicious gift on our sacred union."
             </p>
 
-            <button class="btn-cal"
+            <button class="btn-cal" data-i18n="pass_print_btn"
                 style="background:var(--primary-color); color:var(--gold-bright); border:none; padding:8px 20px;"
                 onclick="window.print()">
                 <i class="fas fa-print"></i> Print / Save Royal Pass
@@ -805,6 +812,10 @@
          FLOATING AMBIANCE & MUSIC DOCK
          ========================================================================== -->
     <div class="floating-ambiance-dock">
+        <!-- Language Toggle Button -->
+        <button class="dock-btn" id="lang-dock-btn" onclick="toggleLanguage()" title="हिन्दी में अनुवाद करें / Translate to Hindi">
+            <span class="dock-lang-icon" id="dockLangIcon">अ</span>
+        </button>
         <!-- Re-open Envelope Button -->
         <button class="dock-btn" id="reopen-envelope-btn" onclick="reopenEnvelope()" title="Re-open Royal Envelope">
             <i class="fas fa-envelope-open-text"></i>
@@ -832,7 +843,7 @@
     </script>
 
     <!-- Custom JS -->
-    <script src="static/invitation/js/script.js?v=3.0"></script>
+    <script src="static/invitation/js/script.js?v=3.1"></script>
 </body>
 
 </html>
