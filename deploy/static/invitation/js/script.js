@@ -1031,3 +1031,312 @@ if ('IntersectionObserver' in window) {
         if (wrap) itineraryObs.observe(wrap);
     });
 }
+
+
+// ==========================================
+// ROYAL BILINGUAL TRANSLATION ENGINE (ENGLISH / हिन्दी)
+// ==========================================
+const ROYAL_TRANSLATIONS = {
+  "en": {
+    "peeking_invocation": "|| SHREE GANESHAYA NAMAH ||",
+    "peeking_couple": "VIPUL & TOSHI",
+    "peeking_tag": "The Royal Wedding Invitation",
+    "flap_calligraphy": "You are invited!",
+    "seal_tap_badge": "TAP TO OPEN",
+    "open_prompt_text": "Click Here to Open...",
+    "shree_ganesh": "|| SHREE GANESHAYA NAMAH ||",
+    "hero_subtitle": "With immense joy and divine blessings, we invite you to witness the union of",
+    "bride_name": "TOSHI",
+    "couple_connector": "with",
+    "groom_name": "VIPUL SA",
+    "hero_tag": "Under the celestial constellation of love, grace & eternal devotion",
+    "blessing_lead": "With The Blessings Of",
+    "grandparents_names": "Smt. Premlata Bohra & Late Shree Pukhraj Sa Bohra",
+    "grandparents_request": "Request the pleasure of your gracious presence on this auspicious occasion of the wedding ceremony of their beloved",
+    "cand_toshi": "Toshi",
+    "cand_vipul": "Vipul Sa",
+    "bride_relation": "Beloved Daughter of",
+    "bride_parents": "Smt. NEELAM BOHRA &amp;<br>Shree MANOJ BOHRA",
+    "groom_relation": "Beloved Son of",
+    "groom_parents": "Smt. SARITA SANCHETI &amp;<br>Shree ARVIND SA SANCHETI",
+    "romantic_quote": "<span class=\"drop-cap\">T</span>wo hearts, two families, one beautiful fairytale destiny. We warmly invite you to share our joy, shower your heartfelt blessings, and be an unforgettable part of our most sacred celebration.",
+    "scratch_title": "The Royal Shubh Muhurat",
+    "scratch_instructions": "<span>✨</span> Scratch each golden heart to unveil our auspicious wedding date <span>✨</span>",
+    "heart_lbl_0": "DAY",
+    "heart_lbl_1": "DEC",
+    "heart_lbl_2": "2026",
+    "scratch_reveal_all": "<i class=\"fas fa-magic\"></i> Reveal All",
+    "scratch_again": "<i class=\"fas fa-redo\"></i> Scratch Again",
+    "countdown_title": "Until the Royal Celebrations Begin",
+    "countdown_days": "Days",
+    "countdown_hours": "Hours",
+    "countdown_minutes": "Minutes",
+    "countdown_seconds": "Seconds",
+    "itinerary_title": "The Wedding Itinerary",
+    "itinerary_tagline": "A Fairytale Journey Across Auspicious Celebrations",
+    "tour_play": "Play Journey",
+    "tour_pause": "Pause Journey",
+    "event_1_badge": "STOP 1 • SUNDAY, 20 DEC",
+    "event_1_title": "Haldi: The Carnival Edition",
+    "event_1_time": "<i class=\"far fa-clock\"></i> 10:00 AM onwards",
+    "event_1_venue": "<i class=\"fas fa-map-marker-alt\"></i> Sher Garh Rawla, Near DPS Circle, Jodhpur",
+    "event_2_badge": "STOP 2 • SUNDAY, 20 DEC",
+    "event_2_title": "Mayra & Battisi",
+    "event_2_time": "<i class=\"far fa-clock\"></i> 2:00 PM onwards",
+    "event_2_venue": "<i class=\"fas fa-map-marker-alt\"></i> Sher Garh Rawla, Near DPS Circle, Jodhpur",
+    "event_3_badge": "STOP 3 • SUNDAY, 20 DEC",
+    "event_3_title": "Sangeet Sandhya",
+    "event_3_time": "<i class=\"far fa-clock\"></i> 6:00 PM onwards",
+    "event_3_venue": "<i class=\"fas fa-map-marker-alt\"></i> Sher Garh Rawla, Near DPS Circle, Jodhpur",
+    "event_4_badge": "STOP 4 • MONDAY, 21 DEC • SHUBH VIVAH",
+    "event_4_title": "Wedding Ceremony",
+    "event_4_time": "<i class=\"far fa-clock\"></i> 10:30 AM onwards",
+    "event_4_venue": "<i class=\"fas fa-map-marker-alt\"></i> Sher Garh Rawla, Near DPS Circle, Jodhpur",
+    "event_5_badge": "STOP 5 • MONDAY, 21 DEC • THE GRAND FINALE",
+    "event_5_title": "The Gala Reception",
+    "event_5_time": "<i class=\"far fa-clock\"></i> 6:00 PM onwards",
+    "event_5_venue": "<i class=\"fas fa-map-marker-alt\"></i> Sher Garh Rawla, Near DPS Circle, Jodhpur",
+    "cal_google": "<i class=\"fab fa-google\"></i> Google Calendar",
+    "cal_apple": "<i class=\"fas fa-calendar-plus\"></i> Apple / Outlook",
+    "family_title": "Bohra's",
+    "family_sub": "WITH BLESSINGS AND LOVE",
+    "pill_warm_welcome": "WARM WELCOME",
+    "family_item_1": "Lt. Smt. Vijay Lakshmi – Shree Devraj Sa",
+    "family_item_2": "Smt. Shanta – Lt. Shree Nirmal Sa",
+    "family_item_3": "Vinita – Ravi Sa",
+    "family_item_4": "Tina – Kuldeep Sa",
+    "family_item_5": "Jyoti – Abhishek Sa",
+    "family_item_6": "Anjali – Ellesh Sa",
+    "family_item_7": "And Ratanpura Bohra Family",
+    "pill_welcome_regards": "WELCOME REGARDS",
+    "regards_1": "Smt. Prabha - Shree Omprakash Sa Kothari",
+    "regards_2": "Smt. Rekha – Shree Umed Raj Sa Lodha",
+    "regards_3": "Smt. Monika – Shree Jayanti Sa Parakh",
+    "regards_4": "Smt. Bhawna - Shree Parikshit Sa Sancheti",
+    "pill_maternals": "MATERNALS",
+    "maternals_1": "Smt. Lalita – Shree Prakashraj Sa",
+    "maternals_2": "Smt. Chandan bala – Shree Pushparaj Sa",
+    "maternals_3": "Shree Mahendra Sa, Dharmendra Sa, Aniil Sa and Singhvi Family",
+    "maternals_4": "Anjana – Gotam Sa",
+    "maternals_5": "Ranjana – Bhagwati lal Sa",
+    "pill_samdhi": "SAMDHI PRAVAR",
+    "samdhi_text": "Shahji Shreeman Laxmichand sa, Uttamchand sa, Mangilal sa, Madanlal Sa, Gotamchand sa, Ashok Sa, Arvind Sa, Anil sa, Arun Sa, Dilip Sa, Sanjay sa and Sancheti Family, Sojat",
+    "pill_sweet_req": "SWEET REQUEST",
+    "sweet_req_text": "Chirag, Megha-Yash Sa, Muskan, Ridhi, Chhavi, Divyam, Aayushi-Piyush Sa, Arpita-Piyush Sa, Avina, Akshay, Manas",
+    "pill_naughty_req": "NAUGHTY REQUEST",
+    "naughty_req_text": "Jeeva, Praavi, Rishiv, Tejas, Samyag, Rishika",
+    "pill_special_req": "SPECIAL REQUEST",
+    "special_req_text": "Meena Bohra, Kriti Jain",
+    "venue_section_title": "The Royal Destination",
+    "venue_name": "Sher Garh Rawla",
+    "venue_location": "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--secondary-color);\"></i> Near DPS Circle, Jodhpur, Rajasthan, India",
+    "venue_desc": "A majestic heritage palace retreat set amidst the royal sands of Marwar, featuring regal jharokhas, serene courtyards, and palace courtyards. Join us for two unforgettable days of timeless celebrations, laughter, and lifelong memories.",
+    "venue_map_btn": "<i class=\"fas fa-location-arrow\"></i> Navigate on Google Maps",
+    "blessing_author": "The Bohra & Sancheti Families",
+    "blessing_text": "\"With humble hearts, we eagerly await to welcome you to our family's joyous celebration.\"",
+    "footer_text": "Made with eternal love for Toshi & Vipul Sa",
+    "footer_tagline": "#Vishi",
+    "royal_pass_header": "Royal Shahi Entry Pass",
+    "royal_pass_sub": "TOSHI & VIPUL SA ROYAL WEDDING",
+    "pass_guest_name": "Honoured Royal Guest",
+    "pass_guest_meta": "Reserved Entry: 2 Guests • Sher Garh Rawla, Jodhpur",
+    "pass_quote": "\"Your presence is the most auspicious gift on our sacred union.\"",
+    "pass_print_btn": "<i class=\"fas fa-print\"></i> Print / Save Royal Pass",
+    "reopen_btn_title": "Re-open Royal Envelope",
+    "music_btn_title": "Royal Sitar & Shehnai Music",
+    "lang_btn_title": "हिन्दी में अनुवाद करें"
+  },
+  "hi": {
+    "peeking_invocation": "|| श्री गणेशाय नमः ||",
+    "peeking_couple": "विपुल एवं तोषी",
+    "peeking_tag": "शाही विवाह निमंत्रण",
+    "flap_calligraphy": "सादर आमंत्रण",
+    "seal_tap_badge": "खोलने के लिए स्पर्श करें",
+    "open_prompt_text": "खोलने के लिए यहाँ स्पर्श करें...",
+    "shree_ganesh": "|| श्री गणेशाय नमः ||",
+    "hero_subtitle": "अत्यंत हर्ष एवं ईश्वरीय कृपा से, हम आपको इस पावन परिणय सूत्र के साक्षी बनने हेतु सादर आमंत्रित करते हैं",
+    "bride_name": "तोषी",
+    "couple_connector": "संग",
+    "groom_name": "विपुल सा",
+    "hero_tag": "प्रेम, अनुग्रह एवं अनन्त समर्पण के पावन नक्षत्र में",
+    "blessing_lead": "परम पूज्य का शुभाशीर्वाद",
+    "grandparents_names": "श्रीमती प्रेमलता बोहरा एवं स्व. श्री पुखराज सा बोहरा",
+    "grandparents_request": "अपनी लाडली के इस मंगलमय शुभ विवाह के पावन अवसर पर आपकी गरिमामयी उपस्थिति एवं शुभाशीष की सादर कामना करते हैं",
+    "cand_toshi": "तोषी",
+    "cand_vipul": "विपुल सा",
+    "bride_relation": "सुपुत्री",
+    "bride_parents": "श्रीमती नीलम बोहरा एवं<br>श्री मनोज बोहरा",
+    "groom_relation": "सुपुत्र",
+    "groom_parents": "श्रीमती सरिता संचेती एवं<br>श्री अरविन्द सा संचेती",
+    "romantic_quote": "<span class=\"drop-cap\">दो</span> हृदय, दो परिवार, एक सुंदर मंगलमय परिणय। हमारे इस पावन उत्सव में सम्मिलित होकर नवयुगल को अपना स्नेहाशीर्वाद प्रदान करें एवं इस पावन प्रसंग को अविस्मरणीय बनाएं।",
+    "scratch_title": "शाही शुभ मुहूर्त",
+    "scratch_instructions": "<span>✨</span> शुभ विवाह तिथि देखने के लिए प्रत्येक स्वर्णिम हृदय को स्क्रैच करें <span>✨</span>",
+    "heart_lbl_0": "दिन",
+    "heart_lbl_1": "दिसंबर",
+    "heart_lbl_2": "२०२६",
+    "scratch_reveal_all": "<i class=\"fas fa-magic\"></i> सब दिखाएं",
+    "scratch_again": "<i class=\"fas fa-redo\"></i> पुनः स्क्रैच करें",
+    "countdown_title": "शाही मंगल उत्सव प्रारम्भ होने में शेष समय",
+    "countdown_days": "दिन",
+    "countdown_hours": "घंटे",
+    "countdown_minutes": "मिनट",
+    "countdown_seconds": "सेकंड",
+    "itinerary_title": "मांगलिक कार्यक्रम",
+    "itinerary_tagline": "विवाह उत्सव के पावन एवं मंगलमय प्रसंग",
+    "tour_play": "यात्रा देखें",
+    "tour_pause": "विराम",
+    "event_1_badge": "प्रसंग १ • रविवार, २० दिसंबर",
+    "event_1_title": "हल्दी: द कार्निवल एडिशन",
+    "event_1_time": "<i class=\"far fa-clock\"></i> प्रातः १०:०० बजे से",
+    "event_1_venue": "<i class=\"fas fa-map-marker-alt\"></i> शेर गढ़ रावला, डीपीएस सर्कल के पास, जोधपुर",
+    "event_2_badge": "प्रसंग २ • रविवार, २० दिसंबर",
+    "event_2_title": "मायरा एवं बत्तीसी",
+    "event_2_time": "<i class=\"far fa-clock\"></i> दोपहर २:०० बजे से",
+    "event_2_venue": "<i class=\"fas fa-map-marker-alt\"></i> शेर गढ़ रावला, डीपीएस सर्कल के पास, जोधपुर",
+    "event_3_badge": "प्रसंग ३ • रविवार, २० दिसंबर",
+    "event_3_title": "संगीत संध्या",
+    "event_3_time": "<i class=\"far fa-clock\"></i> सायं ६:०० बजे से",
+    "event_3_venue": "<i class=\"fas fa-map-marker-alt\"></i> शेर गढ़ रावला, डीपीएस सर्कल के पास, जोधपुर",
+    "event_4_badge": "प्रसंग ४ • सोमवार, २१ दिसंबर • शुभ विवाह",
+    "event_4_title": "शुभ पाणिग्रहण संस्कार (विवाह)",
+    "event_4_time": "<i class=\"far fa-clock\"></i> प्रातः १०:३० बजे से",
+    "event_4_venue": "<i class=\"fas fa-map-marker-alt\"></i> शेर गढ़ रावला, डीपीएस सर्कल के पास, जोधपुर",
+    "event_5_badge": "प्रसंग ५ • सोमवार, २१ दिसंबर • आशीर्वाद समारोह",
+    "event_5_title": "शाही प्रीतिभोज एवं आशीर्वाद समारोह",
+    "event_5_time": "<i class=\"far fa-clock\"></i> सायं ६:०० बजे से",
+    "event_5_venue": "<i class=\"fas fa-map-marker-alt\"></i> शेर गढ़ रावला, डीपीएस सर्कल के पास, जोधपुर",
+    "cal_google": "<i class=\"fab fa-google\"></i> गूगल कैलेंडर",
+    "cal_apple": "<i class=\"fas fa-calendar-plus\"></i> एप्पल / आउटलुक",
+    "family_title": "बोहरा परिवार",
+    "family_sub": "स्नेह एवं शुभाशीर्वाद सहित",
+    "pill_warm_welcome": "दर्शनाभिलाषी",
+    "family_item_1": "स्व. श्रीमती विजय लक्ष्मी – श्री देवराज सा",
+    "family_item_2": "श्रीमती शांता – स्व. श्री निर्मल सा",
+    "family_item_3": "विनीता – रवि सा",
+    "family_item_4": "टीना – कुलदीप सा",
+    "family_item_5": "ज्योति – अभिषेक सा",
+    "family_item_6": "अंजलि – एल्लेश सा",
+    "family_item_7": "एवं रतनपुरा बोहरा परिवार",
+    "pill_welcome_regards": "स्वागतकांक्षी",
+    "regards_1": "श्रीमती प्रभा - श्री ओमप्रकाश सा कोठारी",
+    "regards_2": "श्रीमती रेखा – श्री उमेद राज सा लोढ़ा",
+    "regards_3": "श्रीमती मोनिका – श्री जयंती सा परख",
+    "regards_4": "श्रीमती भावना - श्री परीक्षित सा संचेती",
+    "pill_maternals": "ननिहाल पक्ष",
+    "maternals_1": "श्रीमती ललिता – श्री प्रकाशराज सा",
+    "maternals_2": "श्रीमती चंदन बाला – श्री पुष्पराज सा",
+    "maternals_3": "श्री महेन्द्र सा, धर्मेन्द्र सा, अनिल सा एवं सिंघवी परिवार",
+    "maternals_4": "अंजना – गौतम सा",
+    "maternals_5": "रंजना – भगवती लाल सा",
+    "pill_samdhi": "समधी प्रवर",
+    "samdhi_text": "शाहजी श्रीमान लक्ष्मीचंद सा, उत्तमचंद सा, मांगीलाल सा, मदनलाल सा, गौतमचंद सा, अशोक सा, अरविन्द सा, अनिल सा, अरुण सा, दिलीप सा, संजय सा एवं संचेती परिवार, सोजत",
+    "pill_sweet_req": "बाल मनुहार",
+    "sweet_req_text": "चिराग, मेघा-यश सा, मुस्कान, रिद्धि, छवि, दिव्यम, आयुषी-पीयूष सा, अर्पिता-पीयूष सा, अविना, अक्षय, मानस",
+    "pill_naughty_req": "शरारती मनुहार",
+    "naughty_req_text": "जीवा, प्रवी, ऋषिव, तेजस, सम्यग, ऋषिका",
+    "pill_special_req": "विशिष्ट मनुहार",
+    "special_req_text": "मीना बोहरा, कृति जैन",
+    "venue_section_title": "शाही विवाह स्थल",
+    "venue_name": "शेर गढ़ रावला",
+    "venue_location": "<i class=\"fas fa-map-marker-alt\" style=\"color: var(--secondary-color);\"></i> डीपीएस सर्कल के पास, जोधपुर, राजस्थान, भारत",
+    "venue_desc": "मारवाड़ की पावन धरा पर स्थित एक भव्य ऐतिहासिक हेरिटेज स्थल, जो अपने राजसी झरोखों और सुंदर आंगनों से सुसज्जित है। इस पावन अवसर पर दो दिवसीय अविस्मरणीय उत्सव, आनंद और मंगलमय स्मृतियों में पधारकर हमें अनुग्रहीत करें।",
+    "venue_map_btn": "<i class=\"fas fa-location-arrow\"></i> गूगल मैप्स पर रास्ता देखें",
+    "blessing_author": "बोहरा एवं संचेती परिवार",
+    "blessing_text": "\"विनीत भाव से, हम अपने परिवार के इस पावन उत्सव में आपका स्वागत करने हेतु प्रतीक्षारत हैं।\"",
+    "footer_text": "तोषी एवं विपुल सा के लिए अनंत प्रेम से समर्पित",
+    "footer_tagline": "#विशी",
+    "royal_pass_header": "शाही प्रवेश पत्र (पास)",
+    "royal_pass_sub": "तोषी एवं विपुल सा शाही विवाह",
+    "pass_guest_name": "सम्मानित अतिथि",
+    "pass_guest_meta": "आरक्षित प्रवेश: २ अतिथि • शेर गढ़ रावला, जोधपुर",
+    "pass_quote": "\"इस पावन परिणय पर आपकी गरिमामयी उपस्थिति ही हमारे लिए सबसे अनमोल उपहार है।\"",
+    "pass_print_btn": "<i class=\"fas fa-print\"></i> शाही पास प्रिंट / सेव करें",
+    "reopen_btn_title": "शाही लिफाफा पुनः खोलें",
+    "music_btn_title": "शहनाई संगीत चालू / बंद",
+    "lang_btn_title": "Switch to English"
+  }
+};
+
+let currentLanguage = 'en';
+
+function setLanguage(lang, smooth = true) {
+    if (!ROYAL_TRANSLATIONS[lang]) return;
+    currentLanguage = lang;
+
+    document.documentElement.lang = lang;
+
+    if (lang === 'hi') {
+        document.body.classList.add('lang-hindi');
+    } else {
+        document.body.classList.remove('lang-hindi');
+    }
+
+    // Update Top Language Switcher Pill
+    const btnEn = document.getElementById('lang-pill-en');
+    const btnHi = document.getElementById('lang-pill-hi');
+    if (btnEn && btnHi) {
+        if (lang === 'hi') {
+            btnEn.classList.remove('active');
+            btnHi.classList.add('active');
+        } else {
+            btnEn.classList.add('active');
+            btnHi.classList.remove('active');
+        }
+    }
+
+    // Update Floating Dock Button
+    const dockLangIcon = document.getElementById('dockLangIcon');
+    const dockLangBtn = document.getElementById('lang-dock-btn');
+    if (dockLangIcon) {
+        dockLangIcon.textContent = lang === 'hi' ? 'EN' : 'अ';
+    }
+    if (dockLangBtn) {
+        dockLangBtn.title = lang === 'hi' ? 'Switch to English' : 'हिन्दी में अनुवाद करें';
+    }
+
+    // Update all elements with data-i18n
+    const transElements = document.querySelectorAll('[data-i18n]');
+    transElements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (ROYAL_TRANSLATIONS[lang] && ROYAL_TRANSLATIONS[lang][key]) {
+            el.innerHTML = ROYAL_TRANSLATIONS[lang][key];
+        }
+    });
+
+    // Update button tooltips & attributes
+    const reopenBtn = document.getElementById('reopen-envelope-btn');
+    if (reopenBtn && ROYAL_TRANSLATIONS[lang]['reopen_btn_title']) {
+        reopenBtn.title = ROYAL_TRANSLATIONS[lang]['reopen_btn_title'];
+    }
+    const musicBtn = document.getElementById('music-dock-btn');
+    if (musicBtn && ROYAL_TRANSLATIONS[lang]['music_btn_title']) {
+        musicBtn.title = ROYAL_TRANSLATIONS[lang]['music_btn_title'];
+    }
+
+    // Save language preference in LocalStorage
+    try {
+        localStorage.setItem('vishi_invitation_lang', lang);
+    } catch (e) {}
+}
+
+function toggleLanguage() {
+    const nextLang = currentLanguage === 'en' ? 'hi' : 'en';
+    setLanguage(nextLang);
+}
+
+// Initialize language from URL (?lang=hi) or LocalStorage
+(function initRoyalLanguage() {
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        const savedLang = localStorage.getItem('vishi_invitation_lang');
+        const initialLang = (langParam === 'hi' || (!langParam && savedLang === 'hi')) ? 'hi' : 'en';
+        if (initialLang === 'hi') {
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', () => setLanguage('hi', false));
+            } else {
+                setLanguage('hi', false);
+            }
+        }
+    } catch (e) {}
+})();

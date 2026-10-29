@@ -5357,3 +5357,157 @@ h2.main-title:nth-of-type(3) {
         font-size: 1.35rem !important;
     }
 }
+
+/* ==========================================================================
+   ROYAL BILINGUAL LANGUAGE SWITCHER & HINDI DEVANAGARI TYPOGRAPHY
+   ========================================================================== */
+.royal-lang-pill-container {
+    position: fixed;
+    top: 20px;
+    right: 22px;
+    z-index: 99999 !important;
+    background: rgba(255, 252, 245, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(201, 158, 50, 0.7);
+    border-radius: 30px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(92, 9, 17, 0.18), 0 0 12px rgba(201, 158, 50, 0.25);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    user-select: none;
+}
+
+.royal-lang-pill-container:hover {
+    border-color: #c99e32;
+    box-shadow: 0 6px 24px rgba(92, 9, 17, 0.25), 0 0 16px rgba(201, 158, 50, 0.4);
+    transform: translateY(-1px);
+}
+
+.royal-lang-btn {
+    background: none;
+    border: none;
+    outline: none;
+    font-family: 'Cinzel', 'Noto Serif Devanagari', serif;
+    font-size: 0.80rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #6d635c;
+    cursor: pointer;
+    padding: 4px 12px;
+    border-radius: 16px;
+    transition: all 0.25s ease;
+}
+
+.royal-lang-btn.active {
+    background: linear-gradient(135deg, #5c0911 0%, #7d121c 100%);
+    color: #fdfaf3 !important;
+    box-shadow: 0 2px 8px rgba(92, 9, 17, 0.35);
+}
+
+.royal-lang-btn:hover:not(.active) {
+    color: #5c0911;
+}
+
+.royal-lang-sep {
+    color: rgba(201, 158, 50, 0.7);
+    font-size: 0.82rem;
+    font-weight: bold;
+    user-select: none;
+}
+
+.dock-lang-icon {
+    font-family: 'Noto Serif Devanagari', 'Rozha One', serif;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--secondary-color);
+    line-height: 1;
+}
+
+/* Hindi Mode Typography Overrides */
+body.lang-hindi {
+    font-family: 'Noto Serif Devanagari', serif !important;
+}
+
+body.lang-hindi .main-title,
+body.lang-hindi .candidate-name,
+body.lang-hindi .peeking-couple {
+    font-family: 'Rozha One', 'Noto Serif Devanagari', serif !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.lang-hindi .shree-ganesh,
+body.lang-hindi .peeking-invocation {
+    font-family: 'Noto Serif Devanagari', serif !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.2px !important;
+}
+
+body.lang-hindi .sub-title,
+body.lang-hindi .relation,
+body.lang-hindi .grandparents-request,
+body.lang-hindi .family-section-sub,
+body.lang-hindi .itinerary-tagline {
+    font-family: 'Noto Serif Devanagari', serif !important;
+}
+
+body.lang-hindi .role {
+    font-family: 'Noto Serif Devanagari', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.lang-hindi .section-title {
+    font-family: 'Rozha One', 'Noto Serif Devanagari', serif !important;
+    letter-spacing: 1px !important;
+}
+
+body.lang-hindi .family-card-pill {
+    font-family: 'Noto Serif Devanagari', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.lang-hindi .timeline-event-title {
+    font-family: 'Rozha One', 'Noto Serif Devanagari', serif !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.lang-hindi .timeline-badge {
+    font-family: 'Noto Serif Devanagari', serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+}
+
+body.lang-hindi .open-prompt-text {
+    font-family: 'Noto Serif Devanagari', serif !important;
+    letter-spacing: 1px !important;
+    font-size: 1.35rem !important;
+}
+
+body.lang-hindi .flap-calligraphy {
+    font-family: 'Rozha One', 'Noto Serif Devanagari', serif !important;
+    font-size: 2.3rem !important;
+}
+
+body.lang-hindi .seal-tap-badge {
+    font-family: 'Noto Serif Devanagari', serif !important;
+    font-size: 0.68rem !important;
+    letter-spacing: 0.5px !important;
+}
+
+@media (max-width: 600px) {
+    .royal-lang-pill-container {
+        top: 14px;
+        right: 14px;
+        padding: 3px 8px;
+        gap: 5px;
+    }
+
+    .royal-lang-btn {
+        font-size: 0.72rem;
+        padding: 2px 7px;
+    }
+}
