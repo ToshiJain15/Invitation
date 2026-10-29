@@ -159,26 +159,26 @@ function openInvitation() {
     const stage = document.getElementById('envelope-stage');
     const seal = document.getElementById('royal-wax-seal');
 
-    // 1. Break wax seal with crack & golden sparkle blast
+    // 1. Break wax seal with crack & golden sparkle blast (0ms - 350ms)
     if (seal) {
         seal.classList.add('breaking');
     }
 
-    // 2. Unfold top triangular flap upwards in 3D perspective
+    // 2. Unfold top triangular flap upwards in 3D perspective (starts at 350ms, finishes at 1250ms)
     setTimeout(() => {
         if (stage) {
             stage.classList.add('flapped');
         }
-    }, 380);
+    }, 350);
 
-    // 3. Invitation card physically slides UPWARDS out of the envelope pocket
+    // 3. Invitation card physically slides UPWARDS out of the envelope pocket (starts at 1300ms, finishes at 2300ms)
     setTimeout(() => {
         if (stage) {
             stage.classList.add('card-emerging');
         }
-    }, 900);
+    }, 1300);
 
-    // 4. Smoothly fade envelope stage and reveal the royal Shree Ganesh card
+    // 4. Smoothly fade envelope stage and reveal the royal Shree Ganesh card (starts at 2550ms)
     setTimeout(() => {
         if (stage) {
             stage.classList.add('opened');
@@ -190,7 +190,14 @@ function openInvitation() {
         playBackgroundMusic();
         setTimeout(updateCarPosition, 400);
         setTimeout(initHeartScratchCards, 450);
-    }, 2200);
+    }, 2550);
+
+    // 5. Cleanly hide envelope stage after fade completion
+    setTimeout(() => {
+        if (stage) {
+            stage.style.display = 'none';
+        }
+    }, 3450);
 }
 
 function reopenEnvelope() {
@@ -201,6 +208,7 @@ function reopenEnvelope() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setTimeout(() => {
         isEnvelopeOpened = false;
+        stage.style.display = 'flex';
         stage.classList.remove('opened', 'card-emerging', 'flapped');
         if (seal) {
             seal.classList.remove('breaking');
